@@ -1,6 +1,7 @@
 DROP DATABASE IF EXISTS `pos`;
 CREATE SCHEMA `pos`;
 USE `pos`;
+
 CREATE TABLE `tables` (
     `tables_id` INT UNSIGNED NOT NULL,
     `number` TINYINT UNSIGNED,
@@ -10,6 +11,7 @@ CREATE TABLE `tables` (
     `reserved` BOOLEAN,
     PRIMARY KEY (`tables_id`)
 );
+
 CREATE TABLE `customer` (
     `customer_id` INT UNSIGNED NOT NULL,
     `name` VARCHAR(50),
@@ -18,6 +20,7 @@ CREATE TABLE `customer` (
     `address` VARCHAR(100),
     PRIMARY KEY (`customer_id`)
 );
+
 CREATE TABLE `staff` (
     `staff_id` INT UNSIGNED NOT NULL,
     `name` VARCHAR(50),
@@ -27,6 +30,7 @@ CREATE TABLE `staff` (
     `status` BOOLEAN,
     PRIMARY KEY (`staff_id`)
 );
+
 CREATE TABLE `reservation` (
     `reservation_id` INT UNSIGNED NOT NULL,
     `customer_id` INT UNSIGNED,
@@ -39,6 +43,7 @@ CREATE TABLE `reservation` (
     FOREIGN KEY (`customer_id`) REFERENCES `customer`(`customer_id`),
     FOREIGN KEY (`tables_id`) REFERENCES `tables`(`tables_id`)
 );
+
 CREATE TABLE `menu` (
     `menu_id` INT UNSIGNED NOT NULL,
     `name` VARCHAR(50),
@@ -47,6 +52,7 @@ CREATE TABLE `menu` (
     `price` DECIMAL(10, 2),
     PRIMARY KEY (`menu_id`)
 );
+
 CREATE TABLE `inventory` (
     `inventory_id` INT UNSIGNED NOT NULL,
     `menu_id` INT UNSIGNED,
@@ -54,6 +60,7 @@ CREATE TABLE `inventory` (
     PRIMARY KEY (`inventory_id`),
     FOREIGN KEY (`menu_id`) REFERENCES `menu`(`menu_id`)
 );
+
 CREATE TABLE `category` (
     `category_id` INT UNSIGNED NOT NULL,
     `name` VARCHAR(50),
@@ -62,6 +69,7 @@ CREATE TABLE `category` (
     `age_restricted` BOOLEAN DEFAULT FALSE,
     PRIMARY KEY (`category_id`)
 );
+
 CREATE TABLE `menu_category` (
     `menu_id` INT UNSIGNED,
     `category_id` INT UNSIGNED,
@@ -69,6 +77,7 @@ CREATE TABLE `menu_category` (
     FOREIGN KEY (`category_id`) REFERENCES `category`(`category_id`),
     PRIMARY KEY (`menu_id`, `category_id`)
 );
+
 CREATE TABLE `receipt` (
     `receipt_id` INT UNSIGNED NOT NULL,
     `datetime` DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -80,6 +89,7 @@ CREATE TABLE `receipt` (
     `isValid` BOOLEAN DEFAULT TRUE,
     PRIMARY KEY (`receipt_id`)
 );
+
 CREATE TABLE `orders` (
     `order_id` INT UNSIGNED NOT NULL,
     `receipt_id` INT UNSIGNED,
