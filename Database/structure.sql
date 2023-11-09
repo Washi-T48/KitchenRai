@@ -93,6 +93,3 @@ CREATE TABLE `orders` (
     PRIMARY KEY (`order_id`),
     FOREIGN KEY (`receipt_id`) REFERENCES `receipt`(`receipt_id`)
 );
-SELECT *
-FROM `information_schema`.`columns`
-WHERE `table_schema` = 'pos';
