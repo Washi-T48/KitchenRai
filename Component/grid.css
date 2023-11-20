@@ -3,13 +3,12 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     grid-template-rows: auto;
-    grid-gap: 20px;
+    gap: 20px;
     padding: 10px;
-
+    background-color: none;
 }
 
 .main-grid-container .grid-item {
-    background-color: none;
     min-width: 100px;
     min-height: 100px;
     max-width: 200px;
@@ -20,4 +19,5 @@
     place-items: center;
     word-wrap: break-word;
     font-size: clamp(1rem, 10vw, 2rem);
+    background-color: none;
 }
