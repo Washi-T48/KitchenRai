@@ -1,0 +1,24 @@
+.main-grid-container {
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    padding: 10px;
+
+}
+
+.main-grid-container .grid-item {
+    background-color: lightgreen;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 200px;
+    max-height: 200px;
+    padding: 20px;
+    aspect-ratio: 1 / 1;
+
+    text-align: center;
+    place-items: center;
+    word-wrap: break-word;
+    font-size: clamp(1rem, 10vw, 2rem);
+}
