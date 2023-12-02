@@ -1,0 +1,19 @@
+.order-item-grid {
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+    grid-template-rows: auto;
+    padding: 10px;
+    row-gap: 10px;
+    align-items: center;
+    border: none;
+}
+
+.order-item {
+    background-color: none;
+    padding: 10px;
+    font-size: clamp(1rem, 10vw, 1.5rem);
+}
+
+.order-item.status {
+    background-color: none;
+}
