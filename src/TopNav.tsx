@@ -8,7 +8,7 @@ function TopNav() {
         <div className="nav-item-grid">
           <a href="/table"><div className="nav-item" key="item">Table</div></a>
           <a href="/order"><div className="nav-item" key="item">Order</div></a>
-          <a href="/item"><div className="nav-item" key="item">Kitchen</div></a>
+          <a href="/kitchen"><div className="nav-item" key="item">Kitchen</div></a>
         </div>
       </div>
     </Fragment>
