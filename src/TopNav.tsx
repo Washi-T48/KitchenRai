@@ -3,7 +3,7 @@ import "./TopNav.css";
 function TopNav() {
 
   return (
-    <Fragment>
+    <>
       <div className="nav-grid">
         <div className="nav-item-grid">
           <a href="/table"><div className="nav-item" key="item">Table</div></a>
@@ -11,7 +11,7 @@ function TopNav() {
           <a href="/kitchen"><div className="nav-item" key="item">Kitchen</div></a>
         </div>
       </div>
-    </Fragment>
+    </>
   );
 }
 
