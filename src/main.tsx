@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import './index.css'
 import TopNav from "./TopNav.tsx";
 import Kitchen from "./Kitchen.tsx";
+import Login from "./Login.tsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/table" element={<Kitchen />} />
         <Route path="/order" element={<Kitchen />} />
         <Route path="/kitchen" element={<Kitchen />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
