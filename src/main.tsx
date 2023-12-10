@@ -1,24 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import App from './App.tsx'
-import './index.css'
-import TopNav from "./TopNav.tsx";
-import Kitchen from "./Kitchen.tsx";
-import Login from "./Login.tsx";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import App from "./App";
+// import './index.css'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import Table from "./Table";
+import Order from "./Order";
+import Login from "./Login";
+import Kitchen from "./Kitchen";
 
 
+const router = createBrowserRouter([
+  { path: "/", element: <Table /> },
+  { path: "order", element: <Order /> },
+  { path: "kitchen", element: <Kitchen /> },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <TopNav />
-    <BrowserRouter>
-      <Routes>
-        <Route path="/table" element={<Kitchen />} />
-        <Route path="/order" element={<Kitchen />} />
-        <Route path="/kitchen" element={<Kitchen />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </BrowserRouter>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );

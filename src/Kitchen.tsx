@@ -1,14 +1,13 @@
-import "./Kitchen.css";
-function TopNav() {
+import Nav from "./Nav";
 
+
+function Kitchen() {
     return (
-        <>
-            <div className="order-item-grid">
-                <div className="order-item" key="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In consectetur quidem exercitationem aperiam magnam, dolor illum. Soluta vitae neque a molestiae sapiente dicta voluptates ut esse, asperiores, iste minus officiis.</div>
-                <div className="order-item status" key="item">Status 1</div>
-            </div>
-        </>
+      <>
+        <Nav />
+        <div>Kitchen</div>
+      </>
     );
-}
-
-export default TopNav;
+  }
+  
+  export default Kitchen;

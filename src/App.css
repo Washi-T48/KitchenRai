@@ -5,6 +5,24 @@
   text-align: center;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: black;
+  padding: 1rem;
+  justify-content: flex-start;
+}
+
+nav a {
+  color: aliceblue;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
