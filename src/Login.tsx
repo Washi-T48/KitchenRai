@@ -4,7 +4,6 @@ import "./Login.css";
 function Login() {
   return (
     <>
-      <Nav />
       <form action="/">
         <div className="login-grid">
           <div className="login-header">

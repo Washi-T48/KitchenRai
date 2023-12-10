@@ -9,7 +9,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     grid-template-rows: auto;
-    /* gap: 5px; */
     background-color: none;
     border: 0px solid black;
 }
