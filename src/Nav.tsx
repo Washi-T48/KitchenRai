@@ -1,17 +1,15 @@
 import { Link } from "react-router-dom";
-import "./Nav.css";
+import './Nav.css'
+import exit_logo from "./assets/exit-logo.svg"
 
 function Nav() {
   return (
     <nav>
-      <div className="NavGrid">
-        <Link to="/">Table</Link>
-        <Link to="/order">Order</Link>
-        <Link to="/kitchen">Kitchen</Link>
-      </div>
-      <div className="Login">
-        <Link to="/login">Login</Link>
-      </div>
+      <Link to="/">Table</Link>
+      <Link to="/order">Order</Link>
+      <Link to="/kitchen">Kitchen</Link>
+      <Link to="/login" className="login"><img className="exit_logo" src={exit_logo} /></Link>
+      
     </nav>
   );
 }

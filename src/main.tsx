@@ -1,14 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-// import './index.css'
+import App from "./App.tsx";
+import "bootstrap/dist/css/bootstrap.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Table from "./Table";
-import Order from "./Order";
-import Login from "./Login";
-import Kitchen from "./Kitchen";
-
+import Table from "./Table.tsx";
+import Order from "./Order.tsx";
+import Kitchen from "./Kitchen.tsx";
+import Login from "./Login.tsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <Table /> },

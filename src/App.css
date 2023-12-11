@@ -1,18 +1,11 @@
+/* GLOBAL CSS */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@500&display=swap');
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    font-family: 'Noto Sans Thai', sans-serif;
 }
 
-nav {
-  background-color: black;
-  padding: 1rem;
-  justify-content: flex-start;
+a {
+    color: none;
+    text-decoration: none;
 }
-
-nav div a {
-  color: aliceblue;
-  text-decoration: none;
-  margin: 0 1rem;
-}
-
