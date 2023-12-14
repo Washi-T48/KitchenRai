@@ -64,9 +64,10 @@
     margin-top: 45px;
 }
 
-.user input{
+.user input {
     padding: 10px;
     margin-right: 10px;
+    border: 1px solid black;
 }
 
 .user_logo {
@@ -78,9 +79,10 @@
     margin-top: 40px;
 }
 
-.password input{
+.password input {
     padding: 10px;
     margin-right: 10px;
+    border: 1px solid black;
 }
 
 .password_logo {
@@ -120,7 +122,7 @@ input.remember-me {
     left: 45%;
     border: solid black;
     border-radius: 10px;
-    padding: 10px ;
+    padding: 10px;
     font-size: 25px;
     background-color: aquamarine;
 }

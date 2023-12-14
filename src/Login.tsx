@@ -23,11 +23,11 @@ function Login() {
         <div className="login-body">
           <div className="AUTH">Welcome to Kitchen Rai</div>
           <div className="user">
-            <input type="text" placeholder="Username" />
+            <input type="text" placeholder="Username" id="username" />
             <img className="user_logo" src={user_logo} />
           </div>
           <div className="password">
-            <input type="password" placeholder="Password" />
+            <input type="password" placeholder="Password" id="password" />
             <img className="password_logo" src={password_logo} />
           </div>
         </div>
