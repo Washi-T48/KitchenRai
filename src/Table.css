@@ -1,19 +1,82 @@
-.order-item-grid {
-    display: grid;
-    grid-template-columns: 8fr 2fr;
-    grid-template-rows: auto;
-    padding: 10px;
-    row-gap: 10px;
-    align-items: center;
-    border: none;
+::-webkit-scrollbar {
+  display: none;
 }
 
-.order-item {
-    background-color: none;
-    padding: 10px;
-    font-size: clamp(1rem, 10vw, 1.5rem);
+.main-body-table {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  height: calc(100vh - 60px);
 }
 
-.order-item.status {
-    background-color: none;
+.main-grid-container-table {
+  height: fit-content;
+  max-height: calc(100vh - 60px);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; */
+  grid-auto-rows: auto;
+  gap: 40px;
+  padding: 35px;
+  background-color: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.main-grid-container-table .grid-item {
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 200px;
+  max-height: 200px;
+  padding: 20px;
+  aspect-ratio: 1 / 1;
+  text-align: center;
+  place-items: center;
+  word-wrap: break-word;
+  font-size: clamp(1rem, 10vw, 2rem);
+  border: 2px solid black;
+  padding-top: 50px;
+}
+
+.second-grid-container-table {
+  border: 2px solid black;
+  border-top: 0px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 15% 25% 30% 30%;
+}
+
+.second-grid-container-table #table-id {
+  border-bottom: 2px solid black;
+  padding: 20px;
+  text-align: center;
+  place-items: center;
+  word-wrap: break-word;
+  padding-top: 7.5%;
+  font-size: larger;
+}
+
+.second-grid-container-table #status {
+  padding: 20px;
+  text-align: center;
+  place-items: center;
+  word-wrap: break-word;
+  font-size: larger;
+  padding-top: 20%;
+}
+
+.second-grid-container-table #reserve,
+.second-grid-container-table #checkOut {
+  /* padding: 20px; */
+  text-align: center;
+  place-items: center;
+  word-wrap: break-word;
+  padding-top: 5%;
+}
+
+.second-grid-container-table #reserve-btn,
+.second-grid-container-table #checkOut-btn {
+  padding: 50px;
+  width: 320px;
+  border-radius: 20px;
+  font-size: larger;
 }

@@ -1,5 +1,5 @@
-import React from "react";
-import Nav from "./Nav";
+// import React from "react";
+
 import "./Login.css";
 import kitchen_logo from "./assets/kitchen-logo.jpg";
 import user_logo from "./assets/user-logo.png";
@@ -21,14 +21,14 @@ function Login() {
       </div>
       <div className="login-grid">
         <div className="login-body">
-          <div className="AUTH">AUTHENTICATION</div>
+          <div className="AUTH">Welcome to Kitchen Rai</div>
           <div className="user">
             <input type="text" placeholder="Username" />
             <img className="user_logo" src={user_logo} />
           </div>
           <div className="password">
             <input type="password" placeholder="Password" />
-            <img className="password_logo" src={password_logo } />
+            <img className="password_logo" src={password_logo} />
           </div>
         </div>
         <div className="login-item-footer">
