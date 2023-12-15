@@ -1,23 +1,22 @@
 import React from "react";
+import { useState, useEffect } from "react";
+// import fetch from 'node-fetch';
 import Nav from "./Nav";
 import "./Table.css";
+import TableList from "./TableList";
 
 function Table() {
 
-  async function fetchTableData() {
-    try {
-      const response = await fetch('/table');
-      if (!response.ok) {
-        throw new Error('Failed to fetch table data');
-      }
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  const [table, setTable] = useState([]);
 
-  fetchTableData();
+  useEffect(() => {
+    fetch("http://localhost:3000/tables")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setTable(data);
+      })
+  }, []);
 
   return (
     <>
@@ -25,7 +24,9 @@ function Table() {
       <body>
         <div className="main-body-table">
           <div className="main-grid-container-table">
-
+            {/* ตรงนี้ */}
+            {/* https://youtu.be/qdCHEUaFhBk */}
+            {table && <TableList table={table} />}
           </div>
           <div className="second-grid-container-table">
             <div className="grid-item" id="table-id">
