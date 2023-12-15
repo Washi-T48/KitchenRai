@@ -28,8 +28,11 @@
   height: fit-content;
   padding: 0px;
   text-align: center;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
   place-items: center;
-  font-size: clamp(1rem, 10vw, 1rem);
+  font-size: clamp(2rem, 10vw, 1rem);
   border: 2px solid black;
   padding-top: 25%;
 }
@@ -77,11 +80,11 @@
   place-items: center;
 }
 .second-grid-container-kitchen #done-btn {
-  background-color: rgb(56, 212, 56);
+  background-color: rgb(138, 223, 138);
 }
 
 .second-grid-container-kitchen #cancel-btn {
-  background-color: rgb(249, 66, 66);
+  background-color: rgb(224, 97, 97);
 }
 
 .second-grid-container-kitchen #done-btn,
