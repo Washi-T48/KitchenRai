@@ -3,30 +3,33 @@ import Nav from "./Nav";
 import "./Kitchen.css";
 
 function Kitchen() {
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/orders")
+      .then((res) => res.json())
+      .then((data) => {
+        setMenu(data);
+      })
+  }, []);
+
+  const handleMenuClick = (e) => {
+    if (e) {
+      console.log(e.target.id);
+      if (confirm("Are you sure you want to select this order?")) {
+        fetch("http://localhost:3000/orders/" + e.target.id).then((res) => res.json()).then((data) => {
+          console.log(data);
+        }
+        )
+      }
+    }
+  }
   return (
     <>
       <Nav />
       <body>
         <div className="main-body-kitchen">
           <div className="main-grid-container-kitchen">
-            <div className="grid-item" id="01">
-              01
-            </div>
-            <div className="grid-item" id="02">
-              02
-            </div>
-            <div className="grid-item" id="03">
-              03
-            </div>
-            <div className="grid-item" id="04">
-              04
-            </div>
-            <div className="grid-item" id="05">
-              05
-            </div>
-            <div className="grid-item" id="06">
-              06
-            </div>
             <div className="grid-item" id="07">
               07
             </div>
