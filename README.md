@@ -1,2 +1,8 @@
-# POS.hit
-Another ACS Project
+# kitchenRai
+
+Another ACS Project...
+
+initialization:
+
+npm install
+npm run dev
