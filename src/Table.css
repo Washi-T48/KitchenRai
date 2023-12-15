@@ -77,7 +77,7 @@ body { font-family: 'Mitr', sans-serif; }
   right: 5px; 
   width: 10px; 
   height: 10px; 
-  background-color: red; 
+  background-color: rgb(223, 56, 56); 
   border-radius: 50%; 
   display: block;
   content: '';
@@ -90,7 +90,7 @@ body { font-family: 'Mitr', sans-serif; }
   right: 5px; /* ปรับตำแหน่งของสี่เหลี่ยมเล็กด้านขวา */
   width: 10px; /* กว้างของสี่เหลี่ยมเล็ก */
   height: 10px; /* สูงของสี่เหลี่ยมเล็ก */
-  background-color: green; /* สีเขียวสำหรับสถานะว่าง */
+  background-color: rgb(52, 209, 52); /* สีเขียวสำหรับสถานะว่าง */
   border-radius: 50%; /* ทำให้เป็นวงกลม */
   display: block;
   content: '';

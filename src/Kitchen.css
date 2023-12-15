@@ -11,8 +11,8 @@
 .main-grid-container-kitchen {
   max-height: calc(100vh - 60px);
   display: grid;
-  grid-template-columns: 0;
-  grid-auto-rows: auto;
+  grid-template-columns: auto;
+  grid-auto-rows: 1fr;
   gap: 20px;
   padding: 25px;
   background-color: none;
@@ -21,11 +21,10 @@
 }
 
 .main-grid-container-kitchen .grid-item {
-  min-width: 1000px;
   min-height: 100px;
-  max-width: 1000px;
   max-height: 150px;
   height: fit-content;
+  position: relative;
   padding: 0px;
   text-align: center;
   display: flex; 
@@ -34,7 +33,6 @@
   place-items: center;
   font-size: clamp(2rem, 10vw, 1rem);
   border: 2px solid black;
-  padding-top: 25%;
 }
 
 .second-grid-container-kitchen {

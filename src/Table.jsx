@@ -36,7 +36,7 @@ function Table() {
         <div className="main-body-table">
           <div className="main-grid-container-table">
             {table.map((table) => (
-              <div className="grid-item" id={table.tables_id} style={{ backgroundColor: table.available === 0 ? 'red' : 'green' }} onClick={handleTableClick}>
+              <div className="grid-item" id={table.tables_id} style={{ backgroundColor: table.available === 0 ? 'rgb(223, 56, 56)' : 'rgb(52, 209, 52)' }} onClick={handleTableClick}>
                 {table.number}
               </div>
             ))}
