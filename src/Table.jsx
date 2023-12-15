@@ -1,9 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
-// import fetch from 'node-fetch';
+import Popup from "reactjs-popup";
 import Nav from "./Nav";
 import "./Table.css";
-import TableList from "./TableList";
+
+var currentTable = '';
 
 function Table() {
 
@@ -13,10 +14,22 @@ function Table() {
     fetch("http://localhost:3000/tables")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setTable(data);
       })
   }, []);
+
+
+  const handleTableClick = (e) => {
+    if (e) {
+      console.log(e.target.id);
+      if (confirm("Are you sure you want to select this table?")) {
+        fetch("http://localhost:3000/tables/" + e.target.id).then((res) => res.json()).then((data) => {
+          console.log(data);
+        }
+        )
+      }
+    }
+  }
 
   return (
     <>
@@ -24,16 +37,18 @@ function Table() {
       <body>
         <div className="main-body-table">
           <div className="main-grid-container-table">
-            {/* ตรงนี้ */}
-            {/* https://youtu.be/qdCHEUaFhBk */}
-            {table && <TableList table={table} />}
+            {table.map((table) => (
+              <div className="grid-item" id={table.tables_id} style={{ backgroundColor: table.available === 0 ? 'red' : 'green' }} onClick={handleTableClick}>
+                {table.number}
+              </div>
+            ))}
           </div>
           <div className="second-grid-container-table">
             <div className="grid-item" id="table-id">
-              01
+              {currentTable}
             </div>
             <div className="grid-item" id="status">
-              Status =
+
             </div>
             <div className="grid-item" id="reserve">
               <button id="reserve-btn">Reserve</button>
@@ -43,7 +58,7 @@ function Table() {
             </div>
           </div>
         </div>
-      </body>
+      </body >
     </>
   );
 }
