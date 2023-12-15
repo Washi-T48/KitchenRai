@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Popup from "reactjs-popup";
+// import Popup from "reactjs-popup";
 import Nav from "./Nav";
 import "./Table.css";
 
@@ -66,5 +66,5 @@ function Table() {
 export default Table;
 
 <style>
- @import url('https://fonts.googleapis.com/css?family=Mitr&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Mitr&display=swap');
 </style>
