@@ -1,4 +1,8 @@
-body { font-family: 'Mitr', sans-serif; }
+@import url('https://fonts.googleapis.com/css?family=Mitr&display=swap');
+
+body {
+  font-family: 'Mitr', sans-serif;
+}
 
 ::-webkit-scrollbar {
   display: none;
@@ -66,6 +70,7 @@ body { font-family: 'Mitr', sans-serif; }
   padding-top: 20%;
 
 }
+
 #status {
   position: relative;
 }
@@ -73,12 +78,12 @@ body { font-family: 'Mitr', sans-serif; }
 #status::after {
   content: "";
   position: absolute;
-  top: 5px; 
-  right: 5px; 
-  width: 10px; 
-  height: 10px; 
-  background-color: red; 
-  border-radius: 50%; 
+  top: 5px;
+  right: 5px;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
   display: block;
   content: '';
 }
@@ -86,12 +91,18 @@ body { font-family: 'Mitr', sans-serif; }
 #status::before {
   content: "";
   position: absolute;
-  top: 5px; /* ปรับตำแหน่งของสี่เหลี่ยมเล็กด้านบน */
-  right: 5px; /* ปรับตำแหน่งของสี่เหลี่ยมเล็กด้านขวา */
-  width: 10px; /* กว้างของสี่เหลี่ยมเล็ก */
-  height: 10px; /* สูงของสี่เหลี่ยมเล็ก */
-  background-color: green; /* สีเขียวสำหรับสถานะว่าง */
-  border-radius: 50%; /* ทำให้เป็นวงกลม */
+  top: 5px;
+  /* ปรับตำแหน่งของสี่เหลี่ยมเล็กด้านบน */
+  right: 5px;
+  /* ปรับตำแหน่งของสี่เหลี่ยมเล็กด้านขวา */
+  width: 10px;
+  /* กว้างของสี่เหลี่ยมเล็ก */
+  height: 10px;
+  /* สูงของสี่เหลี่ยมเล็ก */
+  background-color: green;
+  /* สีเขียวสำหรับสถานะว่าง */
+  border-radius: 50%;
+  /* ทำให้เป็นวงกลม */
   display: block;
   content: '';
 }

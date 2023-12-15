@@ -62,7 +62,3 @@ function Table() {
 }
 
 export default Table;
-
-<style>
-  @import url('https://fonts.googleapis.com/css?family=Mitr&display=swap');
-</style>

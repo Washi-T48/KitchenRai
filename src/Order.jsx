@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import Nav from "./Nav";
 import "./Order.css";
 
+var currentTable = '';
+
 function Order() {
 
   const [menu, setMenu] = useState([]);
@@ -42,7 +44,7 @@ function Order() {
 
           <div className="second-grid-container-order">
             <div className="grid-item" id="table-id">
-              01
+              {currentTable}
             </div>
             <div className="grid-item" id="transaction">
               Transaction
