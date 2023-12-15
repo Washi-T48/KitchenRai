@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-// import Popup from "reactjs-popup";
 import Nav from "./Nav";
 import "./Table.css";
 
@@ -17,7 +16,6 @@ function Table() {
         setTable(data);
       })
   }, []);
-
 
   const handleTableClick = (e) => {
     if (e) {
