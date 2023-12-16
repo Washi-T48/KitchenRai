@@ -7,7 +7,6 @@ function Order() {
 
   const [menu, setMenu] = useState([]);
 
-
   useEffect(() => {
     fetch("http://localhost:3000/menu/")
       .then((res) => res.json())
@@ -18,12 +17,7 @@ function Order() {
 
   const handleMenuClick = (e) => {
     if (e) {
-      if (confirm("Are you sure you want to order this menu?")) {
-        fetch("http://localhost:3000/menu/" + e.target.id).then((res) => res.json()).then((data) => {
-          console.log(data);
-        }
-        )
-      }
+      fetch("http://localhost:3000/menu/" + e.target.id)
     }
   }
 
@@ -49,12 +43,13 @@ function Order() {
             </div>
             <div className="grid-item" id="order-list">
               <p id="list">Order List</p>
+
             </div>
             <div className="grid-item" id="total">
               <p id="total-text">TOTAL </p>
             </div>
             <div className="grid-item" id="process">
-              <button id="process-btn">PROCESS</button>
+              <button id="process-btn" >PROCESS</button>
             </div>
           </div>
         </div>
@@ -62,5 +57,6 @@ function Order() {
     </>
   );
 }
+
 
 export default Order;

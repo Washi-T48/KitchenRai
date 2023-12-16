@@ -32,10 +32,7 @@ function Table() {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-        });
-      fetch("http://localhost:3000/tables")
-        .then((res) => res.json())
-        .then(() => {
+        }).then(() => {
           fetch("http://localhost:3000/tables")
             .then((res) => res.json())
             .then((data) => {
@@ -49,14 +46,15 @@ function Table() {
     if (currentTable !== '') {
       fetch("http://localhost:3000/tables/" + currentTable + "/checkout")
         .then((res) => res.json())
-        .then(() => {
+        .then((data) => {
+          console.log(data);
+        }).then(() => {
           fetch("http://localhost:3000/tables")
             .then((res) => res.json())
             .then((data) => {
               setTable(data);
             })
-        });
-
+        })
     }
   }
 
@@ -74,7 +72,7 @@ function Table() {
           </div>
           <div className="second-grid-container-table">
             <div className="grid-item" id="table-id">
-              {currentTable}
+              {currentTable != '' ? `TABLE - ${currentTable}` : 'TABLE'}
             </div>
             <div className="grid-item" id="status">
 

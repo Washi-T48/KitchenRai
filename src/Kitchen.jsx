@@ -17,17 +17,15 @@ function Kitchen() {
       })
   }, []);
 
-  const handleMenuClick = (e) => {
+  const handleOrderClick = (e) => {
     if (e) {
-      console.log(e.target.id);
-      if (confirm("Are you sure you want to select this order?")) {
-        fetch("http://localhost:3000/orders/" + e.target.id).then((res) => res.json()).then((data) => {
-          console.log(data);
-        }
-        )
+      fetch("http://localhost:3000/orders/" + e.target.id).then((res) => res.json()).then((data) => {
+        console.log(data);
       }
+      )
     }
   }
+
   return (
     <>
       <Nav />
@@ -35,7 +33,7 @@ function Kitchen() {
         <div className="main-body-kitchen">
           <div className="main-grid-container-kitchen">
             {orders.map((orders) => (
-              <div className="grid-item" id={orders.order_id} key={orders.order_id} onClick={handleMenuClick}>
+              <div className="grid-item" id={orders.order_id} key={orders.order_id} onClick={handleOrderClick}>
                 {orders.name}
               </div>
             ))}
