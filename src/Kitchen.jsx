@@ -9,6 +9,7 @@ function Kitchen() {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
+    console.log("useEffect");
     fetch("http://localhost:3000/orders")
       .then((res) => res.json())
       .then((data) => {
@@ -34,7 +35,7 @@ function Kitchen() {
         <div className="main-body-kitchen">
           <div className="main-grid-container-kitchen">
             {orders.map((orders) => (
-              <div className="grid-item" id={orders.order_id} onClick={handleMenuClick}>
+              <div className="grid-item" id={orders.order_id} key={orders.order_id} onClick={handleMenuClick}>
                 {orders.name}
               </div>
             ))}

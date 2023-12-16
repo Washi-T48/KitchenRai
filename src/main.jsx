@@ -16,8 +16,11 @@ const router = createBrowserRouter([
   { path: "login", element: React.createElement(Login) },
 ]);
 
+// ReactDOM.createRoot(document.getElementById("root")).render(
+//   React.createElement(React.StrictMode, null,
+//     React.createElement(RouterProvider, { router: router })
+//   )
+
 ReactDOM.createRoot(document.getElementById("root")).render(
-  React.createElement(React.StrictMode, null,
-    React.createElement(RouterProvider, { router: router })
-  )
+  React.createElement(RouterProvider, { router: router })
 );

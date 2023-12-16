@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 import Nav from "./Nav";
 import "./Table.css";
 
-var currentTable = '';
+
 
 function Table() {
 
   const [table, setTable] = useState([]);
+  const [currentTable, setCurrentTable] = useState([]);
+
 
   useEffect(() => {
     fetch("http://localhost:3000/tables")
@@ -20,12 +22,41 @@ function Table() {
   const handleTableClick = (e) => {
     if (e) {
       console.log(e.target.id);
-      if (confirm("Are you sure you want to select this table?")) {
-        fetch("http://localhost:3000/tables/" + e.target.id).then((res) => res.json()).then((data) => {
+      setCurrentTable(e.target.id);
+    }
+  }
+
+  const handleCheckin = () => {
+    if (currentTable !== '') {
+      fetch("http://localhost:3000/tables/" + currentTable + "/checkin")
+        .then((res) => res.json())
+        .then((data) => {
           console.log(data);
-        }
-        )
-      }
+        });
+      fetch("http://localhost:3000/tables")
+        .then((res) => res.json())
+        .then(() => {
+          fetch("http://localhost:3000/tables")
+            .then((res) => res.json())
+            .then((data) => {
+              setTable(data);
+            })
+        })
+    }
+  }
+
+  const handleCheckout = () => {
+    if (currentTable !== '') {
+      fetch("http://localhost:3000/tables/" + currentTable + "/checkout")
+        .then((res) => res.json())
+        .then(() => {
+          fetch("http://localhost:3000/tables")
+            .then((res) => res.json())
+            .then((data) => {
+              setTable(data);
+            })
+        });
+
     }
   }
 
@@ -36,7 +67,7 @@ function Table() {
         <div className="main-body-table">
           <div className="main-grid-container-table">
             {table.map((table) => (
-              <div className="grid-item" id={table.tables_id} style={{ backgroundColor: table.available === 0 ? 'rgb(223, 56, 56)' : 'rgb(52, 209, 52)' }} onClick={handleTableClick}>
+              <div className="grid-item" id={table.tables_id} key={table.tables_id} style={{ backgroundColor: table.available === 0 ? 'rgb(223, 56, 56)' : 'rgb(52, 209, 52)' }} onClick={handleTableClick}>
                 {table.number}
               </div>
             ))}
@@ -49,10 +80,10 @@ function Table() {
 
             </div>
             <div className="grid-item" id="reserve">
-              <button id="reserve-btn">Reserve</button>
+              <button id="reserve-btn" onClick={handleCheckin}>Check in</button>
             </div>
             <div className="grid-item" id="checkOut">
-              <button id="checkOut-btn">Check out</button>
+              <button id="checkOut-btn" onClick={handleCheckout}>Check out</button>
             </div>
           </div>
         </div>

@@ -1,13 +1,12 @@
-// import React from "react";
+import React from "react";
 import { useState, useEffect } from "react";
 import Nav from "./Nav";
 import "./Order.css";
 
-var currentTable = '';
-
 function Order() {
 
   const [menu, setMenu] = useState([]);
+
 
   useEffect(() => {
     fetch("http://localhost:3000/menu/")
@@ -19,7 +18,6 @@ function Order() {
 
   const handleMenuClick = (e) => {
     if (e) {
-      console.log(e.target.id);
       if (confirm("Are you sure you want to order this menu?")) {
         fetch("http://localhost:3000/menu/" + e.target.id).then((res) => res.json()).then((data) => {
           console.log(data);
@@ -36,7 +34,7 @@ function Order() {
         <div className="main-body-order">
           <div className="main-grid-container-order">
             {menu.map((menu) => (
-              <div className="grid-item" id={menu.menu_id} onClick={handleMenuClick}>
+              <div className="grid-item" id={menu.menu_id} key={menu.menu_id} onClick={handleMenuClick}>
                 {menu.name}
               </div>
             ))}
@@ -44,7 +42,7 @@ function Order() {
 
           <div className="second-grid-container-order">
             <div className="grid-item" id="table-id">
-              {currentTable}
+
             </div>
             <div className="grid-item" id="transaction">
               Transaction
