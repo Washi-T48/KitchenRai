@@ -36,7 +36,6 @@ function Kitchen() {
   const handleServe = () => {
     if (currentOrder != '') {
       fetch("http://localhost:3000/orders/" + currentOrder + "/serve").then((res) => res.json()).then(() => {
-        // console.log(data);
       }).then(() => {
         setCurrentOrder('');
         getOrders();
@@ -47,7 +46,6 @@ function Kitchen() {
   const handleCancel = () => {
     if (currentOrder != '') {
       fetch("http://localhost:3000/orders/" + currentOrder + "/cancel").then((res) => res.json()).then(() => {
-        // console.log(data);
       }).then(() => {
         setCurrentOrder('');
         getOrders();
