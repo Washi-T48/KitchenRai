@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Nav from "./Nav";
 import "./Kitchen.css";
 
-
 function Kitchen() {
   const [orders, setOrders] = useState([])
   const [currentOrder, setCurrentOrder] = useState([]);
@@ -14,9 +13,10 @@ function Kitchen() {
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
+        setCurrentOrder('');
+        setCurrentOrderDetails('');
       })
   }
-
 
   useEffect(() => {
     getOrders();

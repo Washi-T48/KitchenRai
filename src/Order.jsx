@@ -19,7 +19,6 @@ function Order() {
       fetch("http://localhost:3000/menu/" + e.target.id);
     }
   };
-  
 
   return (
     <>
@@ -41,7 +40,7 @@ function Order() {
 
           <div className="second-grid-container-order">
             <div className="grid-item" id="table-id">
-            {/* {currentTable != '' ? `TABLE - ${currentTable}` : 'TABLE'} */}
+              {/* {currentTable != '' ? `TABLE - ${currentTable}` : 'TABLE'} */}
             </div>
             <div className="grid-item" id="transaction">
               Transaction
