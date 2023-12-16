@@ -61,9 +61,9 @@ function Kitchen() {
           <div className="main-grid-container-kitchen">
             {orders.map((orders) => (
               <div className="grid-item" id={orders.order_id} key={orders.order_id} onClick={handleOrderClick}>
-                <p id="orderNo">ORDER {orders.order_id}</p> 
-                <p id="foodName">{orders.name}</p>
-                 <p id="tableNo">TABLE {orders.tables_id}</p> 
+                <p id={orders.order_id} key={orders.order_id} className="orderNo">ORDER {orders.order_id}</p>
+                <p id={orders.order_id} key={orders.order_id} className="foodName">{orders.name}</p>
+                <p id={orders.order_id} key={orders.order_id} className="tableNo">TABLE {orders.tables_id}</p>
               </div>
             ))}
           </div>

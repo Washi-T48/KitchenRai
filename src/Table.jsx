@@ -11,6 +11,21 @@ function Table() {
   const [currentTable, setCurrentTable] = useState([]);
   const [status, setStatus] = useState([true]);
 
+  function getTable() {
+    fetch("http://localhost:3000/tables")
+      .then((res) => res.json())
+      .then((data) => {
+        setTable(data);
+      })
+  }
+
+  function getStatus(id) {
+    fetch("http://localhost:3000/tables/" + id)
+      .then((res) => res.json())
+      .then((data) => {
+        setStatus(data[0].available);
+      });
+  }
 
   useEffect(() => {
     fetch("http://localhost:3000/tables")
@@ -22,8 +37,8 @@ function Table() {
 
   const handleTableClick = (e) => {
     if (e) {
-      console.log(e.target.id);
       setCurrentTable(e.target.id);
+      getStatus(e.target.id);
     }
   }
 
@@ -31,14 +46,9 @@ function Table() {
     if (currentTable !== '') {
       fetch("http://localhost:3000/tables/" + currentTable + "/checkin")
         .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-        }).then(() => {
-          fetch("http://localhost:3000/tables")
-            .then((res) => res.json())
-            .then((data) => {
-              setTable(data);
-            })
+        .then(() => {
+          getTable();
+          getStatus(currentTable);
         })
     }
   }
@@ -47,14 +57,9 @@ function Table() {
     if (currentTable !== '') {
       fetch("http://localhost:3000/tables/" + currentTable + "/checkout")
         .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-        }).then(() => {
-          fetch("http://localhost:3000/tables")
-            .then((res) => res.json())
-            .then((data) => {
-              setTable(data);
-            })
+        .then(() => {
+          getTable();
+          getStatus(currentTable);
         })
     }
   }
@@ -76,7 +81,7 @@ function Table() {
               {currentTable != '' ? `TABLE - ${currentTable}` : 'TABLE'}
             </div>
             <div className="grid-item" id="status">
-              Status = {status != '' ? "Available" : "Unavailable"}
+              Status = {status ? 'Available' : 'Not Available'}
             </div>
             <div className="grid-item" id="reserve">
               <button id="reserve-btn" onClick={handleCheckin}>CHECK IN</button>
