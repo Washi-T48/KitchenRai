@@ -21,18 +21,37 @@
 }
 
 .main-grid-container-kitchen .grid-item {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
   min-height: 100px;
   max-height: 150px;
   height: fit-content;
   position: relative;
   padding: 0px;
   text-align: center;
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   place-items: center;
   font-size: clamp(2rem, 10vw, 1rem);
   border: 2px solid black;
+}
+
+.main-grid-container-kitchen .grid-item #orderNo {
+  border-right: 2px solid black;
+  height: 100%;
+  padding-right: 15%;
+  margin-bottom: 0;
+}
+
+.main-grid-container-kitchen .grid-item #foodName {
+  margin-bottom: 0;
+}
+
+.main-grid-container-kitchen .grid-item #tableNo {
+  border-left: 2px solid black;
+  height: 100%;
+  padding-left: 15%;
+  margin-bottom: 0;
 }
 
 .second-grid-container-kitchen {
@@ -91,4 +110,17 @@
   width: 320px;
   border-radius: 20px;
   font-size: larger;
+}
+
+/* สีบอกเวลา */
+.time1 {
+  background-color: greenyellow;
+}
+
+.time1 {
+  background-color: greenyellow;
+}
+
+.time1 {
+  background-color: greenyellow;
 }
