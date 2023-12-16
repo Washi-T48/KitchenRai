@@ -68,14 +68,11 @@ body {
   word-wrap: break-word;
   font-size: larger;
   padding-top: 20%;
-
-}
-
-#status {
   position: relative;
 }
 
-#status::after {
+
+/* #status::after {
   content: "";
   position: absolute;
   top: 5px; 
@@ -86,20 +83,20 @@ body {
   border-radius: 50%; 
   display: block;
   content: '';
-}
+} */
 
-#status::before {
+/* #status::before {
   content: "";
   position: absolute;
-  top: 5px; /* ปรับตำแหน่งของสี่เหลี่ยมเล็กด้านบน */
-  right: 5px; /* ปรับตำแหน่งของสี่เหลี่ยมเล็กด้านขวา */
-  width: 10px; /* กว้างของสี่เหลี่ยมเล็ก */
-  height: 10px; /* สูงของสี่เหลี่ยมเล็ก */
-  background-color: green; /* สีเขียวสำหรับสถานะว่าง */
-  border-radius: 50%; /* ทำให้เป็นวงกลม */
+  top: 5px; 
+  right: 5px; 
+  width: 10px;
+  height: 10px; 
+  background-color: green;
+  border-radius: 50%; 
   display: block;
   content: '';
-}
+} */
 
 
 .second-grid-container-table #reserve,
