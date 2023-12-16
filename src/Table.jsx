@@ -78,10 +78,10 @@ function Table() {
 
             </div>
             <div className="grid-item" id="reserve">
-              <button id="reserve-btn" onClick={handleCheckin}>Check in</button>
+              <button id="reserve-btn" onClick={handleCheckin}>CHECK IN</button>
             </div>
             <div className="grid-item" id="checkOut">
-              <button id="checkOut-btn" onClick={handleCheckout}>Check out</button>
+              <button id="checkOut-btn" onClick={handleCheckout}>CHECK OUT</button>
             </div>
           </div>
         </div>
