@@ -13,26 +13,23 @@ function Login() {
           <img src={kitchen_logo} />
           <h1 className="logo_name">KITCHEN RAI</h1>
         </div>
-        {/* <form action="#">
+        <form action="#">
           <div className="login-signup">
             <button> SIGN-UP </button>
           </div>
-        </form> */}
+        </form>
       </div>
       <div className="login-grid">
         <div className="login-body">
           <div className="AUTH">Welcome to Kitchen Rai</div>
-          {/* <div className="user">
+          <div className="user">
             <input type="text" placeholder="Username" id="username" />
             <img className="user_logo" src={user_logo} />
           </div>
           <div className="password">
             <input type="password" placeholder="Password" id="password" />
             <img className="password_logo" src={password_logo} />
-          </div> */}
-          <form action="/">
-            <button className="login-btn">Login</button>
-          </form>
+          </div>
         </div>
         {/* <div className="login-item-footer">
           <label>
@@ -44,6 +41,9 @@ function Login() {
           </a>
         </div> */}
       </div>
+      <form action="/">
+        <button className="login-btn">Login</button>
+      </form>
     </>
   );
 }
