@@ -1,6 +1,9 @@
+import { useState, useEffect } from "react";
 // import React from "react";
 import Nav from "./Nav";
 import "./Kitchen.css";
+
+var currentOrder = '';
 
 function Kitchen() {
   const [orders, setOrders] = useState([]);
@@ -9,7 +12,7 @@ function Kitchen() {
     fetch("http://localhost:3000/orders")
       .then((res) => res.json())
       .then((data) => {
-        setMenu(data);
+        setOrders(data);
       })
   }, []);
 
@@ -30,14 +33,15 @@ function Kitchen() {
       <body>
         <div className="main-body-kitchen">
           <div className="main-grid-container-kitchen">
-            <div className="grid-item" id="07">
-              07
-            </div>
+            {orders.map((orders) => (
+              <div className="grid-item" id={orders.order_id} onClick={handleMenuClick}>
+                {orders.name}
+              </div>
+            ))}
           </div>
-
           <div className="second-grid-container-kitchen">
             <div className="grid-item" id="table-id">
-              01
+              {currentOrder}
             </div>
             <div className="grid-item" id="food">
               Food Name x1

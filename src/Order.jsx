@@ -10,7 +10,7 @@ function Order() {
   const [menu, setMenu] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/menu")
+    fetch("http://localhost:3000/menu/")
       .then((res) => res.json())
       .then((data) => {
         setMenu(data);
@@ -21,7 +21,7 @@ function Order() {
     if (e) {
       console.log(e.target.id);
       if (confirm("Are you sure you want to order this menu?")) {
-        fetch("http://localhost:3000/order/" + e.target.id).then((res) => res.json()).then((data) => {
+        fetch("http://localhost:3000/menu/" + e.target.id).then((res) => res.json()).then((data) => {
           console.log(data);
         }
         )
