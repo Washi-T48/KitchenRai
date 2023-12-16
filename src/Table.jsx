@@ -9,6 +9,7 @@ function Table() {
 
   const [table, setTable] = useState([]);
   const [currentTable, setCurrentTable] = useState([]);
+  const [status, setStatus] = useState([true]);
 
 
   useEffect(() => {
@@ -75,7 +76,7 @@ function Table() {
               {currentTable != '' ? `TABLE - ${currentTable}` : 'TABLE'}
             </div>
             <div className="grid-item" id="status">
-
+              Status = {status != '' ? "Available" : "Unavailable"}
             </div>
             <div className="grid-item" id="reserve">
               <button id="reserve-btn" onClick={handleCheckin}>CHECK IN</button>

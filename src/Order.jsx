@@ -4,7 +4,6 @@ import Nav from "./Nav";
 import "./Order.css";
 
 function Order() {
-
   const [menu, setMenu] = useState([]);
 
   useEffect(() => {
@@ -12,14 +11,15 @@ function Order() {
       .then((res) => res.json())
       .then((data) => {
         setMenu(data);
-      })
+      });
   }, []);
 
   const handleMenuClick = (e) => {
     if (e) {
-      fetch("http://localhost:3000/menu/" + e.target.id)
+      fetch("http://localhost:3000/menu/" + e.target.id);
     }
-  }
+  };
+  
 
   return (
     <>
@@ -28,7 +28,12 @@ function Order() {
         <div className="main-body-order">
           <div className="main-grid-container-order">
             {menu.map((menu) => (
-              <div className="grid-item" id={menu.menu_id} key={menu.menu_id} onClick={handleMenuClick}>
+              <div
+                className="grid-item"
+                id={menu.menu_id}
+                key={menu.menu_id}
+                onClick={handleMenuClick}
+              >
                 {menu.name}
               </div>
             ))}
@@ -36,20 +41,19 @@ function Order() {
 
           <div className="second-grid-container-order">
             <div className="grid-item" id="table-id">
-
+            {/* {currentTable != '' ? `TABLE - ${currentTable}` : 'TABLE'} */}
             </div>
             <div className="grid-item" id="transaction">
               Transaction
             </div>
             <div className="grid-item" id="order-list">
               <p id="list">Order List</p>
-
             </div>
             <div className="grid-item" id="total">
               <p id="total-text">TOTAL </p>
             </div>
             <div className="grid-item" id="process">
-              <button id="process-btn" >PROCESS</button>
+              <button id="process-btn">PROCESS</button>
             </div>
           </div>
         </div>
@@ -57,6 +61,5 @@ function Order() {
     </>
   );
 }
-
 
 export default Order;

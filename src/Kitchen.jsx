@@ -61,12 +61,14 @@ function Kitchen() {
           <div className="main-grid-container-kitchen">
             {orders.map((orders) => (
               <div className="grid-item" id={orders.order_id} key={orders.order_id} onClick={handleOrderClick}>
-                ORDER {orders.order_id} | TABLE {orders.tables_id} | {orders.name}
+                <p id="orderNo">ORDER {orders.order_id}</p> 
+                <p id="foodName">{orders.name}</p>
+                 <p id="tableNo">TABLE {orders.tables_id}</p> 
               </div>
             ))}
           </div>
           <div className="second-grid-container-kitchen">
-            <div className="grid-item" id="table-id">
+            <div className="grid-item,time1" id="table-id">
               {currentOrder != '' ? <>
                 ORDER #{currentOrder}
               </> : 'ORDER'}
