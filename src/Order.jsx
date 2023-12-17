@@ -5,7 +5,7 @@ import "./Order.css";
 
 function Order() {
   const [menu, setMenu] = useState([]);
-  const [orderNumber, setOrderNumber] = useState([]);
+  const [receiptNumber, setReceiptNumber] = useState([]);
   const [logAction, setLogAction] = useState([]);
   const [currentMenu, setCurrentMenu] = useState([]);
   const [currentMenuName, setCurrentMenuName] = useState([]);
@@ -16,24 +16,27 @@ function Order() {
       .then((data) => {
         setMenu(data);
       });
-    if (orderNumber == '') {
-      setOrderNumber(Math.floor(Math.random() * 10000000000));
+    if (receiptNumber == '') {
+      setReceiptNumber(Math.floor(Math.random() * 1000000));
     }
   }, []);
 
 
   const handleMenuClick = (e) => {
     if (e) {
-      fetch("http://localhost:3000/menu/" + e.target.id);
-      setCurrentMenu(e.target.id);
-      setCurrentMenuName(e.target.textContent);
-      handleOrder(e.target.id);
+      fetch("http://localhost:3000/orders/additem/" + receiptNumber + "/menu/" + e.target.id)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data[0]);
+          setCurrentMenu(data[0].menu_id);
+          setCurrentMenuName(e.target.name);
+        });
     }
   };
 
-  const handleOrder = () => {
+  // const handleOrder = () => {
 
-  };
+  // };
 
   return (
     <>
@@ -58,7 +61,7 @@ function Order() {
               {logAction}
             </div>
             <div className="grid-item" id="transaction">
-              {orderNumber <= 0 ? 'No Item' : '#' + orderNumber}
+              {receiptNumber <= 0 ? 'No Item' : '#' + receiptNumber}
             </div>
             <div className="grid-item" id="order-list">
               <p id="list">Order List</p>
