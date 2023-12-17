@@ -81,7 +81,7 @@ function Table() {
               {currentTable != '' ? `TABLE - ${currentTable}` : 'TABLE'}
             </div>
             <div className="grid-item" id="status">
-              Status = {status ? 'Available' : 'Not Available'}
+              {currentTable != '' ? <>{status ? "Available" : "Unavailable"}</> : ''}
             </div>
             <div className="grid-item" id="reserve">
               <button id="reserve-btn" onClick={handleCheckin}>CHECK IN</button>
