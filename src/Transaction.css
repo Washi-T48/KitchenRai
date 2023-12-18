@@ -6,7 +6,8 @@
 .main-body-transaction {
   display: grid;
   grid-template-columns: 70% 30%;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 63px);
+  width: calc(100vw);
 }
 
 .main-grid-container-transaction {
@@ -119,13 +120,75 @@
 }
 
 @media (max-width: 1280px) {
-  
+  .main-body-transaction {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    height: calc(100vh - 60px);
+    width: calc(100vw);
+  }
+  .second-grid-container-transaction {
+    border-bottom: 0px;
+  }
 }
 
 @media (max-width: 1024px) {
+  .main-body-transaction {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    height: calc(100vh - 60px);
+    width: calc(100vw);
+  }
+
+  .second-grid-container-transaction #table-id {
+    padding-top: 7.5%;
+    font-size: 1rem;
+  }
   
+  .second-grid-container-transaction #food {
+    font-size: 1rem;
+    padding-top: 20%;
+  }
+  
+  .second-grid-container-transaction #time {
+    font-size: 1rem;
+    padding-top: 7.5%;
+  }
+
+  .second-grid-container-transaction #done-btn,
+  .second-grid-container-transaction #cancel-btn {
+    font-size: 1rem;
+    padding: 30px;
+    width: 11.5rem;
+  }
 }
 
 @media (max-width: 432px) {
+  .main-body-transaction {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    height: calc(100vh - 60px);
+    width: calc(100vw);
+  }
 
+  .second-grid-container-transaction #table-id {
+    padding-top: 7.5%;
+    font-size: 1rem;
+  }
+  
+  .second-grid-container-transaction #food {
+    font-size: 1rem;
+    padding-top: 20%;
+  }
+  
+  .second-grid-container-transaction #time {
+    font-size: 1rem;
+    padding-top: 3rem;
+  }
+
+  .second-grid-container-transaction #done-btn,
+  .second-grid-container-transaction #cancel-btn {
+    font-size: 0.8rem;
+    padding: 1rem;
+    width: 5rem;
+  }
 }
