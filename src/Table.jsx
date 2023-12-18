@@ -1,4 +1,5 @@
 import React from "react";
+import Cookies from "universal-cookie";
 import { useState, useEffect } from "react";
 import Nav from "./Nav";
 import "./Table.css";
@@ -7,6 +8,7 @@ import "./Table.css";
 
 function Table() {
 
+  const cookies = new Cookies();
   const [table, setTable] = useState([]);
   const [currentTable, setCurrentTable] = useState([]);
   const [status, setStatus] = useState([true]);
@@ -33,10 +35,12 @@ function Table() {
       .then((data) => {
         setTable(data);
       })
+      setCurrentTable(cookies.get("table"));
   }, []);
 
   const handleTableClick = (e) => {
     if (e) {
+      cookies.set("table", e.target.id, { path: "/" });
       setCurrentTable(e.target.id);
       getStatus(e.target.id);
     }

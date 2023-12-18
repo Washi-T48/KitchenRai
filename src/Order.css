@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Mitr&display=swap');
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
 body {
   font-family: 'Mitr', sans-serif;
 }
@@ -94,4 +101,14 @@ body {
   border-radius: 20px;
   font-size: larger;
   background-color: rgb(138, 223, 138);
+}
+
+.transactionInput {
+  width: 6ch;
+  color: blue;
+}
+
+.transactionInput ::placeholder {
+  opacity: 1;
+  color: green;
 }

@@ -1,14 +1,15 @@
 import React from "react";
+import Cookies from "universal-cookie";
 import { useState, useEffect } from "react";
 import Nav from "./Nav";
 import "./Order.css";
 
 function Order() {
+  const cookies = new Cookies();
   const [menu, setMenu] = useState([]);
+  const [currentTable, setCurrentTable] = useState([]);
   const [receiptNumber, setReceiptNumber] = useState([]);
-  const [logAction, setLogAction] = useState([]);
-  const [currentMenu, setCurrentMenu] = useState([]);
-  const [currentMenuName, setCurrentMenuName] = useState([]);
+  const [orderList, setOrderList] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3000/menu/")
@@ -16,27 +17,57 @@ function Order() {
       .then((data) => {
         setMenu(data);
       });
-    if (receiptNumber == '') {
-      setReceiptNumber(Math.floor(Math.random() * 1000000));
+    setCurrentTable(cookies.get("table"));
+    console.log(cookies.get("receiptNumber"));
+    if (cookies.get("receiptNumber") == '') {
+      cookies.set("receiptNumber", (Math.floor(Math.random() * 1000000)), { path: "/" });
     }
+    setReceiptNumber(cookies.get("receiptNumber"));
+    getOrderList();
   }, []);
 
 
   const handleMenuClick = (e) => {
-    if (e) {
-      fetch("http://localhost:3000/orders/additem/" + receiptNumber + "/menu/" + e.target.id)
+    if (e && currentTable !== '') {
+      fetch("http://localhost:3000/orders/additem/" + receiptNumber + "/menu/" + e.target.id + "/table/" + currentTable)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data[0]);
-          setCurrentMenu(data[0].menu_id);
-          setCurrentMenuName(e.target.name);
+          getOrderList();
         });
     }
   };
 
-  // const handleOrder = () => {
+  const getOrderList = () => {
+    var currentReceiptNumber;
+    if (receiptNumber == '') {
+      currentReceiptNumber = cookies.get("receiptNumber");
+    } else {
+      currentReceiptNumber = receiptNumber;
+    }
+    console.log(currentReceiptNumber);
+    fetch("http://localhost:3000/receipt/" + currentReceiptNumber)
+      .then((res) => res.json())
+      .then((data) => {
+        setOrderList(data);
+      });
+  };
 
-  // };
+  const editReceiptNumber = (e) => {
+    if (e) {
+      if (e.target[0].value == '') {
+        var generatedReceiptNumber = (Math.floor(Math.random() * 1000000));
+        cookies.set("receiptNumber", generatedReceiptNumber, { path: "/" });
+        setReceiptNumber(generatedReceiptNumber);
+        e.target[0].placeholder = generatedReceiptNumber;
+        getOrderList();
+      } else {
+        cookies.set("receiptNumber", e.target[0].value, { path: "/" });
+        setReceiptNumber(e.target[0].value);
+        getOrderList();
+      }
+    }
+    getOrderList();
+  }
 
   return (
     <>
@@ -58,13 +89,18 @@ function Order() {
 
           <div className="second-grid-container-order">
             <div className="grid-item" id="table-id">
-              {logAction}
+              {currentTable == '' ? 'No Table' : 'Table #' + currentTable}
             </div>
             <div className="grid-item" id="transaction">
-              {receiptNumber <= 0 ? 'No Item' : '#' + receiptNumber}
+              {<><form onSubmit={editReceiptNumber}><input placeholder={receiptNumber} type="number" min="0" max="2147483647" step="1" className="transactionInput"></input></form></>}
             </div>
             <div className="grid-item" id="order-list">
               <p id="list">Order List</p>
+              {orderList.map((orderList) => (
+                <div className="order-list-item" id={orderList.order_id} key={orderList.order_id}>
+                  <p id={orderList.order_id} key={orderList.order_id} className="orderListItem">T.{orderList.tables_id} | {orderList.menu_id} {orderList.name}</p>
+                </div>
+              ))}
             </div>
             <div className="grid-item" id="total">
               <p id="total-text">TOTAL ANYSAX </p>
@@ -74,7 +110,7 @@ function Order() {
             </div>
           </div>
         </div>
-      </body>
+      </body >
     </>
   );
 }
