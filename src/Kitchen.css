@@ -1,5 +1,6 @@
 ::-webkit-scrollbar {
   display: none;
+  overflow-x: hidden;
 }
 
 .main-body-kitchen {

@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Mitr&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Mitr&display=swap");
 
 body {
-  font-family: 'Mitr', sans-serif;
+  font-family: "Mitr", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -71,7 +71,6 @@ body {
   position: relative;
 }
 
-
 /* #status::after {
   content: "";
   position: absolute;
@@ -98,7 +97,6 @@ body {
   content: '';
 } */
 
-
 .second-grid-container-table #reserve,
 .second-grid-container-table #checkOut {
   /* padding: 20px; */
@@ -122,4 +120,66 @@ body {
   width: 320px;
   border-radius: 20px;
   font-size: larger;
+}
+
+/* Reponsive */
+@media (max-width: 1920px) {
+}
+
+@media (max-width: 1280px) {
+  .main-body-table {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    height: calc(100vh);
+    width: calc(100vw);
+  }
+  .second-grid-container-table {
+    border-bottom: 0px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-body-table {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    height: calc(100vh - 63px);
+    width: calc(100vw);
+  }
+
+  .second-grid-container-table #reserve-btn,
+  .second-grid-container-table #checkOut-btn {
+    padding: 2.75rem;
+    width: 12.5rem;
+    border-radius: 20px;
+    font-size: larger;
+  }
+}
+
+@media (max-width: 432px) {
+
+  .main-body-table {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: calc(100vh - 63px);
+    width: calc(100vw);
+  }
+
+  .main-grid-container-table {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    grid-auto-rows: auto;
+    gap: 30px;
+    padding: 35px;
+    background-color: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .second-grid-container-table #reserve-btn,
+  .second-grid-container-table #checkOut-btn {
+    padding: 2rem;
+    width: 7.5rem;
+    border-radius: 20px;
+    font-size: 15px;
+  }
 }
