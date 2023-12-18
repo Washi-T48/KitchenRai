@@ -1,14 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Mitr&display=swap');
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-
-body {
-  font-family: 'Mitr', sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -114,16 +107,10 @@ body {
 }
 
 /* Reponsive */
-@media (max-width: 1920px) {
-}
+@media (max-width: 1920px) {}
 
-@media (max-width: 1280px) {
-  
-}
+@media (max-width: 1280px) {}
 
-@media (max-width: 1024px) {
-  
-}
+@media (max-width: 1024px) {}
 
-@media (max-width: 432px) {
-}
+@media (max-width: 432px) {}

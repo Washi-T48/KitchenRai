@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import App from "./App.jsx";
 import "bootstrap/dist/css/bootstrap.css";
+import "./main.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Table from "./Table.jsx";
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
   { path: "order", element: React.createElement(Order) },
   { path: "kitchen", element: React.createElement(Kitchen) },
   { path: "login", element: React.createElement(Login) },
-  { path: "transaction", element: React.createElement(Transaction)},
+  { path: "transaction", element: React.createElement(Transaction) },
 ]);
 
 // ReactDOM.createRoot(document.getElementById("root")).render(
