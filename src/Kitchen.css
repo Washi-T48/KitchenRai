@@ -7,6 +7,7 @@
   display: grid;
   grid-template-columns: 70% 30%;
   height: calc(100vh - 60px);
+  width: calc(100vw);
 }
 
 .main-grid-container-kitchen {
@@ -52,7 +53,6 @@
   padding-right: 15%;
   padding-left: 15%;
   margin-bottom: 0;
-
 }
 
 .second-grid-container-kitchen {
@@ -119,13 +119,47 @@
 }
 
 @media (max-width: 1280px) {
-  
+  .main-body-kitchen {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    height: calc(100vh - 60px);
+    width: calc(100vw);
+  }
+  .second-grid-container-kitchen {
+    border-bottom: 0px;
+  }
 }
 
 @media (max-width: 1024px) {
+  .main-body-kitchen {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    height: calc(100vh - 60px);
+    width: calc(100vw);
+  }
+
+  .second-grid-container-kitchen #table-id {
+    padding-top: 7.5%;
+    font-size: 1rem;
+  }
   
+  .second-grid-container-kitchen #food {
+    font-size: 1rem;
+    padding-top: 20%;
+  }
+  
+  .second-grid-container-kitchen #time {
+    font-size: 1rem;
+    padding-top: 7.5%;
+  }
+
+  .second-grid-container-kitchen #done-btn,
+  .second-grid-container-kitchen #cancel-btn {
+    font-size: 1rem;
+    padding: 30px;
+    width: 12.5rem;
+  }
 }
 
 @media (max-width: 432px) {
-
 }

@@ -18,7 +18,7 @@ body {
 .main-body-order {
   display: grid;
   grid-template-columns: 70% 30%;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 63px);
 }
 
 .main-grid-container-order {
@@ -118,12 +118,107 @@ body {
 }
 
 @media (max-width: 1280px) {
-  
+  .main-body-order {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    height: calc(100vh - 60px);
+    width: calc(100vw);
+  }
+  .second-grid-container-order {
+    border: 2px solid black;
+    border-top: 0px;
+    border-bottom: 0px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15% 5% 60% 5% 15%;
+  }
+
+  .transactionInput {
+    width: 5rem;
+  }
 }
 
 @media (max-width: 1024px) {
+  .main-body-order {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    height: calc(100vh - 60px);
+    width: calc(100vw);
+  }
+  .second-grid-container-order {
+    border-top: 0px;
+    border-bottom: 0px;
+  }
+  .second-grid-container-order #table-id {
+    font-size: 1rem;
+  }
   
+  .second-grid-container-order #transaction {
+    font-size: 1rem;
+    padding-right: 25px;
+  }
+
+  .transactionInput {
+    width: 5rem;
+    height: 1.5rem;
+  }
+  
+  .second-grid-container-order #order-list {
+    padding-top: 2rem;
+    font-size: 1rem;
+  }
+  
+  .second-grid-container-order #total-text {
+    font-size: 0.9rem;
+  }
+  
+  .second-grid-container-order #process-btn {
+    padding: 20px;
+    width: 10rem;
+    border-radius: 20px;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 432px) {
+  .main-body-order {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    height: calc(100vh - 60px);
+    width: calc(100vw);
+  }
+  .second-grid-container-order {
+    border-top: 0px;
+    border-bottom: 0px;
+  }
+  .second-grid-container-order #table-id {
+    font-size: 1rem;
+  }
+  
+  .second-grid-container-order #transaction {
+    font-size: 0.75rem;
+    padding-right: 8px;
+  }
+
+  .transactionInput {
+    width: 4rem;
+    height: 1.5rem;
+  }
+  
+  .second-grid-container-order #order-list {
+    padding-top: 1.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .second-grid-container-order #total-text {
+    font-size: 0.9rem;
+  }
+  
+  .second-grid-container-order #process-btn {
+    margin-top: 0.5rem;
+    padding: 20px;
+    width: 5rem;
+    border-radius: 20px;
+    font-size: 1rem;
+  }
 }
