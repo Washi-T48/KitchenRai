@@ -31,7 +31,7 @@ function Order() {
     if (e && currentTable !== '') {
       fetch("http://localhost:3000/orders/additem/" + receiptNumber + "/menu/" + e.target.id + "/table/" + currentTable)
         .then((res) => res.json())
-        .then((data) => {
+        .then(() => {
           getOrderList();
         });
     }
