@@ -36,7 +36,7 @@ body {
   grid-template-rows: auto;
   background-color: black;
   padding: 1rem;
-  height: 3.5rem;
+  height: 60px;
   width: 100vw;
 }
 
@@ -44,7 +44,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-template-rows: auto;
-  gap: 0rem;
+  gap: 1rem;
   background-color: none;
 }
 
@@ -54,6 +54,9 @@ body {
   font-size: 1.15rem;
 }
 .nav-item-grid a:first-child {
+  padding-left: 2.5rem;
+}
+.nav-item-grid #kitchen-nav {
   padding-left: 2.5rem;
 }
 
@@ -89,7 +92,7 @@ body {
     grid-template-rows: auto;
     background-color: black;
     padding: 1rem;
-    height: 3.5rem;
+    height: 60px;
     width: 100vw;
   }
 
@@ -120,7 +123,7 @@ body {
     grid-template-rows: auto;
     background-color: black;
     padding: 1rem;
-    height: 3.5rem;
+    height: 60px;
     width: 100vw;
   }
 
@@ -153,12 +156,12 @@ body {
     grid-template-rows: auto;
     background-color: black;
     padding: 1rem;
-    height: 3.5rem;
+    height: 60px;
     width: 100vw;
   }
   .nav-item-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
     grid-template-rows: auto;
     gap: 0px;
     background-color: none;
@@ -166,11 +169,14 @@ body {
   .nav-item-grid a {
     text-decoration: none;
     color: white;
-    font-size: 1.15rem;
+    font-size: 0.5rem;
   }
 
   .nav-item-grid a:first-child {
       padding-left: 0rem;
+  }
+  .nav-item-grid #kitchen-nav {
+    padding-left: 2rem;
   }
 
   .logout {

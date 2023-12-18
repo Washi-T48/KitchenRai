@@ -92,7 +92,7 @@ function Order() {
               {currentTable == '' ? 'No Table' : 'Table #' + currentTable}
             </div>
             <div className="grid-item" id="transaction">
-              {<><form onSubmit={editReceiptNumber}><input placeholder={receiptNumber} type="number" min="0" max="2147483647" step="1" className="transactionInput"></input></form></>}
+              Receipt ID :{<><form onSubmit={editReceiptNumber}><input placeholder={receiptNumber} type="number" min="0" max="2147483647" step="1" className="transactionInput"></input></form></>}
             </div>
             <div className="grid-item" id="order-list">
               <p id="list">Order List</p>

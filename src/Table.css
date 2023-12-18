@@ -130,19 +130,26 @@ body {
   .main-body-table {
     display: grid;
     grid-template-columns: 70% 30%;
-    height: calc(100vh);
+    height: calc(100vh - 60px);
     width: calc(100vw);
   }
   .second-grid-container-table {
     border-bottom: 0px;
   }
+  .second-grid-container-table #reserve-btn,
+.second-grid-container-table #checkOut-btn {
+  padding: 50px;
+  width: 250px;
+  border-radius: 20px;
+  font-size: larger;
+}
 }
 
 @media (max-width: 1024px) {
   .main-body-table {
     display: grid;
     grid-template-columns: 70% 30%;
-    height: calc(100vh - 63px);
+    height: calc(100vh - 60px);
     width: calc(100vw);
   }
 
@@ -160,7 +167,7 @@ body {
   .main-body-table {
     display: grid;
     grid-template-columns: 50% 50%;
-    height: calc(100vh - 63px);
+    height: calc(100vh - 60px);
     width: calc(100vw);
   }
 
