@@ -35,7 +35,9 @@ function Table() {
       .then((data) => {
         setTable(data);
       })
+    if (cookies.get("table")) {
       setCurrentTable(cookies.get("table"));
+    }
   }, []);
 
   const handleTableClick = (e) => {

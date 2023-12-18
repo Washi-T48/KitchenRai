@@ -12,15 +12,16 @@ function Order() {
   const [orderList, setOrderList] = useState([]);
 
   useEffect(() => {
+    if (!cookies.get("receiptNumber")) {
+      cookies.set("receiptNumber", (Math.floor(Math.random() * 1000000)), { path: "/" });
+    }
     fetch("http://localhost:3000/menu/")
       .then((res) => res.json())
       .then((data) => {
         setMenu(data);
       });
-    setCurrentTable(cookies.get("table"));
-    console.log(cookies.get("receiptNumber"));
-    if (cookies.get("receiptNumber") == '') {
-      cookies.set("receiptNumber", (Math.floor(Math.random() * 1000000)), { path: "/" });
+    if (!cookies.get("table")) {
+      setCurrentTable(cookies.get("table"));
     }
     setReceiptNumber(cookies.get("receiptNumber"));
     getOrderList();
@@ -28,7 +29,7 @@ function Order() {
 
 
   const handleMenuClick = (e) => {
-    if (e && currentTable !== '') {
+    if (e && cookies.get("table")) {
       fetch("http://localhost:3000/orders/additem/" + receiptNumber + "/menu/" + e.target.id + "/table/" + currentTable)
         .then((res) => res.json())
         .then(() => {
