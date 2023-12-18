@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 // import React from "react";
 import Nav from "./Nav";
-import "./Kitchen.css";
+import "./Transaction.css";
 
-function Kitchen() {
+function Transaction() {
   const [orders, setOrders] = useState([])
   const [currentOrder, setCurrentOrder] = useState([]);
   const [currentOrderDetails, setCurrentOrderDetails] = useState([]);
@@ -57,8 +57,8 @@ function Kitchen() {
     <>
       <Nav />
       <body>
-        <div className="main-body-kitchen">
-          <div className="main-grid-container-kitchen">
+        <div className="main-body-transaction">
+          <div className="main-grid-container-transaction">
             {orders.map((orders) => (
               <div className="grid-item" id={orders.order_id} key={orders.order_id} onClick={handleOrderClick}>
                 <p id={orders.order_id} key={orders.order_id} className="orderNo">ORDER {orders.order_id}</p>
@@ -67,7 +67,7 @@ function Kitchen() {
               </div>
             ))}
           </div>
-          <div className="second-grid-container-kitchen">
+          <div className="second-grid-container-transaction">
             <div className="grid-item" id="table-id">
               {currentOrder != '' ? <>
                 ORDER #{currentOrder}
@@ -92,4 +92,4 @@ function Kitchen() {
   );
 }
 
-export default Kitchen;
+export default Transaction;

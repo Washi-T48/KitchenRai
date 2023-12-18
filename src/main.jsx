@@ -8,12 +8,14 @@ import Table from "./Table.jsx";
 import Order from "./Order.jsx";
 import Kitchen from "./Kitchen.jsx";
 import Login from "./Login.jsx";
+import Transaction from "./Transaction.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: React.createElement(Table) },
   { path: "order", element: React.createElement(Order) },
   { path: "kitchen", element: React.createElement(Kitchen) },
   { path: "login", element: React.createElement(Login) },
+  { path: "transaction", element: React.createElement(Transaction)},
 ]);
 
 // ReactDOM.createRoot(document.getElementById("root")).render(

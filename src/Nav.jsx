@@ -15,6 +15,9 @@ function Nav() {
           <Link to="/order">Order</Link>
         </div>
         <div className="nav-item">
+          <Link to="/transaction">Transaction</Link>
+        </div>
+        <div className="nav-item">
           <Link to="/kitchen">Kitchen</Link>
         </div>
       </div>

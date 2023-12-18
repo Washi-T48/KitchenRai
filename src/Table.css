@@ -166,9 +166,9 @@ body {
 
   .main-grid-container-table {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
     grid-auto-rows: auto;
-    gap: 30px;
+    gap: 40px;
     padding: 35px;
     background-color: none;
     overflow-x: hidden;

@@ -3,13 +3,13 @@
   overflow-x: hidden;
 }
 
-.main-body-kitchen {
+.main-body-transaction {
   display: grid;
   grid-template-columns: 70% 30%;
   height: calc(100vh - 60px);
 }
 
-.main-grid-container-kitchen {
+.main-grid-container-transaction {
   max-height: calc(100vh - 60px);
   display: grid;
   grid-template-columns: auto;
@@ -21,7 +21,7 @@
   overflow-y: scroll;
 }
 
-.main-grid-container-kitchen .grid-item {
+.main-grid-container-transaction .grid-item {
   display: grid;
   grid-template-columns: 20% 60% 20%;
   min-height: 100px;
@@ -37,17 +37,17 @@
   border: 2px solid black;
 }
 
-.main-grid-container-kitchen .grid-item .orderNo {
+.main-grid-container-transaction .grid-item .orderNo {
   border-right: 2px solid black;
   padding-right: 15%;
   margin-bottom: 0;
 }
 
-.main-grid-container-kitchen .grid-item .foodName {
+.main-grid-container-transaction .grid-item .foodName {
   margin-bottom: 0;
 }
 
-.main-grid-container-kitchen .grid-item .tableNo {
+.main-grid-container-transaction .grid-item .tableNo {
   border-left: 2px solid black;
   padding-right: 15%;
   padding-left: 15%;
@@ -55,7 +55,7 @@
 
 }
 
-.second-grid-container-kitchen {
+.second-grid-container-transaction {
   border: 2px solid black;
   border-top: 0px;
   display: grid;
@@ -63,7 +63,7 @@
   grid-template-rows: 15% 25% 10% 25% 25%;
 }
 
-.second-grid-container-kitchen #table-id {
+.second-grid-container-transaction #table-id {
   border-bottom: 2px solid black;
   padding: 20px;
   text-align: center;
@@ -73,7 +73,7 @@
   font-size: larger;
 }
 
-.second-grid-container-kitchen #food {
+.second-grid-container-transaction #food {
   padding: 20px;
   text-align: center;
   place-items: center;
@@ -82,7 +82,7 @@
   padding-top: 20%;
 }
 
-.second-grid-container-kitchen #time {
+.second-grid-container-transaction #time {
   padding: 20px;
   text-align: center;
   place-items: center;
@@ -91,23 +91,23 @@
   padding-top: 7.5%;
 }
 
-.second-grid-container-kitchen #done,
-.second-grid-container-kitchen #cancel {
+.second-grid-container-transaction #done,
+.second-grid-container-transaction #cancel {
   /* padding: 20px; */
   text-align: center;
   place-items: center;
 }
 
-.second-grid-container-kitchen #done-btn {
+.second-grid-container-transaction #done-btn {
   background-color: rgb(138, 223, 138);
 }
 
-.second-grid-container-kitchen #cancel-btn {
+.second-grid-container-transaction #cancel-btn {
   background-color: rgb(224, 97, 97);
 }
 
-.second-grid-container-kitchen #done-btn,
-.second-grid-container-kitchen #cancel-btn {
+.second-grid-container-transaction #done-btn,
+.second-grid-container-transaction #cancel-btn {
   padding: 50px;
   width: 320px;
   border-radius: 20px;
