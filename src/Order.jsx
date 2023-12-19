@@ -45,7 +45,6 @@ function Order() {
     } else {
       currentReceiptNumber = receiptNumber;
     }
-    console.log(currentReceiptNumber);
     fetch("http://localhost:3000/receipt/" + currentReceiptNumber)
       .then((res) => res.json())
       .then((data) => {

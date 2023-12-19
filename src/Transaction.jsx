@@ -8,12 +8,13 @@ function Transaction() {
   const [receipt, setReceipt] = useState([])
   const [currentReceipt, setCurrentReceipt] = useState([]);
   const [orderList, setOrderList] = useState([]);
+  const [currentTotal, setCurrentTotal] = useState([]);
+
 
   const getReceipt = () => {
     fetch("http://localhost:3000/receipt")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setReceipt(data);
       })
   }
@@ -21,12 +22,13 @@ function Transaction() {
   const getOrderList = () => {
     setOrderList([]);
     var currentReceiptNumber = cookies.get("receiptNumber");
-    console.log(currentReceiptNumber);
     fetch("http://localhost:3000/receipt/" + currentReceiptNumber)
       .then((res) => res.json())
       .then((data) => {
         setOrderList(data);
       });
+    console.log(orderList);
+    getTotal();
   }
 
 
@@ -38,15 +40,19 @@ function Transaction() {
   }
 
   const handlePay = (e) => {
-    e.preventDefault();
-    console.log(e.target.id);
-    setCurrentReceipt(e.target.id);
+
   }
 
   const handleCancel = (e) => {
-    e.preventDefault();
-    console.log(e.target.id);
-    setCurrentReceipt(e.target.id);
+  }
+
+  const getTotal = () => {
+    var currentReceiptNumber = cookies.get("receiptNumber");
+    fetch("http://localhost:3000/receipt/" + currentReceiptNumber + "/total")
+      .then((res) => res.json())
+      .then((data) => {
+        setCurrentTotal(data[0].total);
+      });
   }
 
 
@@ -86,12 +92,12 @@ function Transaction() {
             <div className="grid-item" id="food">
               {orderList.map((orderList) => (
                 <p id={orderList.receipt_id} key={orderList.receipt_id} className="foodName">
-                  {orderList.name} - {orderList.price}
+                  {orderList.served == null ? '❌' : '✅'}{orderList.name} - {orderList.price}
                 </p>
               ))}
             </div>
-            <div className="grid-item" id="time">
-              Time
+            <div className="grid-item" id="total">
+              {currentTotal != '' ? <>TOTAL : {currentTotal}</> : 'TOTAL'}
             </div>
             <div className="grid-item" id="done">
               <button id="done-btn" onClick={handlePay}>PAY</button>

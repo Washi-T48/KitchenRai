@@ -77,7 +77,6 @@ function Kitchen() {
               {currentOrderDetails}
             </div>
             <div className="grid-item" id="time">
-
             </div>
             <div className="grid-item" id="done">
               <button id="done-btn" onClick={handleServe}>SERVE</button>
