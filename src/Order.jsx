@@ -96,13 +96,14 @@ function Order() {
             <div className="grid-item" id="transaction">
               Receipt ID :{<><form onSubmit={editReceiptNumber}><input placeholder={receiptNumber} type="number" min="0" max="2147483647" step="1" className="transactionInput"></input></form></>}
             </div>
-            <div className="grid-item" id="order-list">
+            <div className="grid-item" id="order-list2">
               <p id="list">Order List</p>
+              <div className="grid-item" id="order-list">
               {orderList.map((orderList) => (
                 <div className="order-list-item" id={orderList.order_id} key={orderList.order_id}>
                   <p id={orderList.order_id} key={orderList.order_id} className="orderListItem">T.{orderList.tables_id} | {orderList.menu_id} {orderList.name}</p>
                 </div>
-              ))}
+              ))}</div>
             </div>
             <div className="grid-item" id="total">
               <p id="total-text">TOTAL ANYSAX </p>
