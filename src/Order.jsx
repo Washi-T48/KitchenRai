@@ -105,12 +105,12 @@ function Order() {
                   </div>
                 ))}</div>
             </div>
-            <div className="grid-item" id="total">
+            {/* <div className="grid-item" id="total">
               <p id="total-text">TOTAL ANYSAX </p>
             </div>
             <div className="grid-item" id="process">
               <button id="process-btn">PROCESS</button>
-            </div>
+            </div> */}
           </div>
         </div>
       </body >
