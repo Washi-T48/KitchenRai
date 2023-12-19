@@ -74,10 +74,7 @@ input::-webkit-inner-spin-button {
   padding-top: 1rem;
   padding-bottom: 0rem;
   font-size: larger;
-}
-
-.second-grid-container-order #order-list .order-list-item {
-  max-height: 16rem;
+  max-height: 19rem;
   display: grid;
   grid-template-columns: auto;
   grid-auto-rows: 1fr;
@@ -144,7 +141,7 @@ input::-webkit-inner-spin-button {
     width: 5rem;
   }
 
-  .second-grid-container-order #order-list .order-list-item {
+  .second-grid-container-order #order-list {
     max-height: 20rem;
   }
 }
@@ -183,9 +180,6 @@ input::-webkit-inner-spin-button {
   .second-grid-container-order #order-list {
     padding-top: 2rem;
     font-size: 1rem;
-  }
-
-  .second-grid-container-order #order-list .order-list-item {
     max-height: 11.7rem;
   }
   
@@ -235,13 +229,10 @@ input::-webkit-inner-spin-button {
     height: 1.5rem;
   }
 
-  .second-grid-container-order #order-list .order-list-item {
-    max-height: 25rem;
-  }
-  
   .second-grid-container-order #order-list {
     padding-top: 1.5rem;
     font-size: 0.8rem;
+    max-height: 25rem;
   }
   
   .second-grid-container-order #total-text {
@@ -259,7 +250,7 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 391px) {
-  .second-grid-container-order #order-list .order-list-item {
+  .second-grid-container-order #order-list {
     max-height: 21rem;
   }
   .main-grid-container-order {

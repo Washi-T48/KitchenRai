@@ -20,6 +20,7 @@
   background-color: none;
   overflow-x: hidden;
   overflow-y: scroll;
+  height: fit-content;
 }
 
 .main-grid-container-kitchen .grid-item {
