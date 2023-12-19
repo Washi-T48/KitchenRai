@@ -39,11 +39,30 @@ function Transaction() {
     getOrderList();
   }
 
-  const handlePay = (e) => {
-
+  const handlePay = () => {
+    fetch("http://localhost:3000/receipt/" + currentReceipt + "/pay")
+      .then((res) => res.json())
+      .then(() => {
+        setCurrentReceipt('');
+        cookies.set("receiptNumber", (Math.floor(Math.random() * 1000000)), { path: "/" });
+        setOrderList([]);
+        setCurrentTotal('');
+        getReceipt();
+        window.location.reload(); // Refresh the page
+      })
   }
 
-  const handleCancel = (e) => {
+  const handleCancel = () => {
+    fetch("http://localhost:3000/receipt/" + currentReceipt + "/cancel")
+      .then((res) => res.json())
+      .then(() => {
+        setCurrentReceipt('');
+        cookies.set("receiptNumber", (Math.floor(Math.random() * 1000000)), { path: "/" });
+        setOrderList([]);
+        setCurrentTotal('');
+        getReceipt();
+        window.location.reload(); // Refresh the page
+      })
   }
 
   const getTotal = () => {
@@ -77,8 +96,8 @@ function Transaction() {
             {receipt.map((receipt) => (
               <div className="grid-item" id={receipt.receipt_id} key={receipt.receipt_id} onClick={handleReceiptClick}>
                 <p id={receipt.receipt_id} key={receipt.receipt_id} className="time">{receipt.datetime}</p>
-                <p id={receipt.receipt_id} key={receipt.receipt_id} className=""></p>
                 <p id={receipt.receipt_id} key={receipt.receipt_id} className="receiptID">#{receipt.receipt_id}</p>
+                <p id={receipt.receipt_id} key={receipt.receipt_id} className="isPaid"></p>
               </div>
             ))
             }
@@ -92,7 +111,7 @@ function Transaction() {
             <div className="grid-item" id="food">
               {orderList.map((orderList) => (
                 <p id={orderList.receipt_id} key={orderList.receipt_id} className="foodName">
-                  {orderList.served == null ? '❌' : '✅'}{orderList.name} - {orderList.price}
+                  {orderList.served == null ? '❌' : '✅'} - T.{orderList.tables_id} - {orderList.name} - {orderList.price}
                 </p>
               ))}
             </div>
