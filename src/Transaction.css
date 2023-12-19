@@ -79,12 +79,22 @@
 }
 
 .second-grid-container-transaction #food {
-  padding: 20px;
-  text-align: center;
-  place-items: center;
-  word-wrap: break-word;
-  font-size: larger;
-  padding-top: 20%;
+    border: 2px solid gray;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    text-align: center;
+    place-items: center;
+    word-wrap: break-word;
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+    font-size: larger;
+    max-height: 12rem;
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-rows: 1fr;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .second-grid-container-transaction #time {
@@ -143,6 +153,10 @@
 
   .second-grid-container-transaction {
     border-bottom: 0px;
+  }
+
+  .second-grid-container-transaction #food {
+    max-height: 12rem;
   }
 }
 
@@ -224,6 +238,7 @@
   .second-grid-container-transaction #food {
     font-size: 1rem;
     padding-top: 20%;
+    max-height: 12rem;
   }
 
   .second-grid-container-transaction #time {
@@ -236,5 +251,9 @@
     font-size: 0.8rem;
     padding: 1rem;
     width: 5rem;
+  }
+
+  .receiptID{
+    padding-right: 1rem;
   }
 }
