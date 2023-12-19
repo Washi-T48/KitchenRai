@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-// import React from "react";
 import Nav from "./Nav";
 import "./Transaction.css";
+import Cookies from "universal-cookie";
 
 function Transaction() {
+  const cookies = new Cookies();
   const [receipt, setReceipt] = useState([])
   const [currentReceipt, setCurrentReceipt] = useState([]);
-  const [cusrrentReceiptDetails, setCurrentReceiptDetails] = useState([]);
+  const [currentReceiptDetails, setCurrentReceiptDetails] = useState([]);
 
   function getReceipt() {
     fetch("http://localhost:3000/receipt")
@@ -14,14 +15,23 @@ function Transaction() {
       .then((data) => {
         console.log(data);
         setReceipt(data);
-
       })
   }
 
+  function getReceiptDetails(id) {
+    fetch("http://localhost:3000/receipt/" + id)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setCurrentReceiptDetails(data);
+      })
+  }
+
+
   function handleReceiptClick(e) {
-    e.preventDefault();
-    console.log(e.target.id);
+    cookies.set("receiptNumber", e.target.id, { path: "/" });
     setCurrentReceipt(e.target.id);
+    getReceiptDetails(e.target.id);
   }
 
   function handlePay(e) {
@@ -38,6 +48,9 @@ function Transaction() {
 
 
   useEffect(() => {
+    if (cookies.get("receiptNumber")) {
+      setCurrentReceipt(cookies.get("receiptNumber"));
+    }
     getReceipt();
   }, []);
 
@@ -62,10 +75,16 @@ function Transaction() {
             <div className="grid-item" id="table-id">
               {currentReceipt != '' ? <>
                 RECEIPT #{currentReceipt}
-              </> : 'ORDER'}
+              </> : 'RECEIPT'}
             </div>
             <div className="grid-item" id="food">
-              {cusrrentReceiptDetails != '' ? <></> : 'FOOD'}
+              {currentReceiptDetails.map((item) => {
+                return (
+                  <p id={item.receipt_id} key={item.receipt_id} className="foodName">
+                    {item.name} - {item.price}
+                  </p>
+                );
+              })}
             </div>
             <div className="grid-item" id="time">
               Time
