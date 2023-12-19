@@ -16,6 +16,7 @@ function Transaction() {
       .then((res) => res.json())
       .then((data) => {
         setReceipt(data);
+        console.log(data);
       })
   }
 
@@ -97,7 +98,7 @@ function Transaction() {
               <div className="grid-item" id={receipt.receipt_id} key={receipt.receipt_id} onClick={handleReceiptClick}>
                 <p id={receipt.receipt_id} key={receipt.receipt_id} className="time">{receipt.datetime}</p>
                 <p id={receipt.receipt_id} key={receipt.receipt_id} className="receiptID">#{receipt.receipt_id}</p>
-                <p id={receipt.receipt_id} key={receipt.receipt_id} className="isPaid"></p>
+                <p id={receipt.receipt_id} key={receipt.receipt_id} className="isPaid">{receipt.isPaid != 0 ? '✅' : "❌"}</p>
               </div>
             ))
             }
