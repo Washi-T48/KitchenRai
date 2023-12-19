@@ -4,54 +4,44 @@ import Nav from "./Nav";
 import "./Transaction.css";
 
 function Transaction() {
-  const [orders, setOrders] = useState([])
-  const [currentOrder, setCurrentOrder] = useState([]);
-  const [currentOrderDetails, setCurrentOrderDetails] = useState([]);
+  const [receipt, setReceipt] = useState([])
+  const [currentReceipt, setCurrentReceipt] = useState([]);
+  const [cusrrentReceiptDetails, setCurrentReceiptDetails] = useState([]);
 
-  function getOrders() {
-    fetch("http://localhost:3000/orders")
+  function getReceipt() {
+    fetch("http://localhost:3000/receipt")
       .then((res) => res.json())
       .then((data) => {
-        setOrders(data);
-        setCurrentOrder('');
-        setCurrentOrderDetails('');
+        console.log(data);
+        setReceipt(data);
+
       })
   }
+
+  function handleReceiptClick(e) {
+    e.preventDefault();
+    console.log(e.target.id);
+    setCurrentReceipt(e.target.id);
+  }
+
+  function handlePay(e) {
+    e.preventDefault();
+    console.log(e.target.id);
+    setCurrentReceipt(e.target.id);
+  }
+
+  function handleCancel(e) {
+    e.preventDefault();
+    console.log(e.target.id);
+    setCurrentReceipt(e.target.id);
+  }
+
 
   useEffect(() => {
-    getOrders();
+    getReceipt();
   }, []);
 
-  const handleOrderClick = (e) => {
-    if (e) {
-      fetch("http://localhost:3000/orders/" + e.target.id).then((res) => res.json()).then((data) => {
-        setCurrentOrder(data[0].order_id);
-        setCurrentOrderDetails(data.map((item) => {
-          return item.name + "  โต๊ะ " + item.tables_id;
-        }));
-      })
-    }
-  }
 
-  const handleServe = () => {
-    if (currentOrder != '') {
-      fetch("http://localhost:3000/orders/" + currentOrder + "/serve").then((res) => res.json()).then(() => {
-      }).then(() => {
-        setCurrentOrder('');
-        getOrders();
-      })
-    }
-  }
-
-  const handleCancel = () => {
-    if (currentOrder != '') {
-      fetch("http://localhost:3000/orders/" + currentOrder + "/cancel").then((res) => res.json()).then(() => {
-      }).then(() => {
-        setCurrentOrder('');
-        getOrders();
-      })
-    }
-  }
 
   return (
     <>
@@ -59,28 +49,29 @@ function Transaction() {
       <body>
         <div className="main-body-transaction">
           <div className="main-grid-container-transaction">
-            {orders.map((orders) => (
-              <div className="grid-item" id={orders.order_id} key={orders.order_id} onClick={handleOrderClick}>
-                <p id={orders.order_id} key={orders.order_id} className="orderNo">ORDER {orders.order_id}</p>
-                <p id={orders.order_id} key={orders.order_id} className="foodName">{orders.name}</p>
-                <p id={orders.order_id} key={orders.order_id} className="tableNo">TABLE {orders.tables_id}</p>
+            {receipt.map((receipt) => (
+              <div className="grid-item" id={receipt.receipt_id} key={receipt.receipt_id} onClick={handleReceiptClick}>
+                <p id={receipt.receipt_id} key={receipt.receipt_id} className="time">#{receipt.datetime}</p>
+                <p id={receipt.receipt_id} key={receipt.receipt_id} className="receiptID">{receipt.receipt_id}</p>
+                <p id={receipt.receipt_id} key={receipt.receipt_id} className="total">TABLE</p>
               </div>
-            ))}
+            ))
+            }
           </div>
           <div className="second-grid-container-transaction">
             <div className="grid-item" id="table-id">
-              {currentOrder != '' ? <>
-                ORDER #{currentOrder}
+              {currentReceipt != '' ? <>
+                RECEIPT #{currentReceipt}
               </> : 'ORDER'}
             </div>
             <div className="grid-item" id="food">
-              {currentOrderDetails}
+              {cusrrentReceiptDetails != '' ? <></> : 'FOOD'}
             </div>
             <div className="grid-item" id="time">
               Time
             </div>
             <div className="grid-item" id="done">
-              <button id="done-btn" onClick={handleServe}>SERVE</button>
+              <button id="done-btn" onClick={handlePay}>PAY</button>
             </div>
             <div className="grid-item" id="cancel">
               <button id="cancel-btn" onClick={handleCancel}>CANCEL</button>

@@ -4,9 +4,9 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .main-body-order {
   display: grid;
@@ -137,6 +137,7 @@ input::-webkit-inner-spin-button {
     grid-template-columns: 1fr;
     grid-template-rows: 15% 5% 60% 5% 15%;
   }
+
   .transactionInput {
     width: 5rem;
   }
@@ -163,10 +164,11 @@ input::-webkit-inner-spin-button {
     border-top: 0px;
     border-bottom: 0px;
   }
+
   .second-grid-container-order #table-id {
     font-size: 1rem;
   }
-  
+
   .second-grid-container-order #transaction {
     font-size: 1rem;
     padding-right: 25px;
@@ -176,17 +178,17 @@ input::-webkit-inner-spin-button {
     width: 5rem;
     height: 1.5rem;
   }
-  
+
   .second-grid-container-order #order-list {
     padding-top: 2rem;
     font-size: 1rem;
     max-height: 11.7rem;
   }
-  
+
   .second-grid-container-order #total-text {
     font-size: 0.9rem;
   }
-  
+
   .second-grid-container-order #process-btn {
     padding: 20px;
     width: 10rem;
@@ -211,14 +213,16 @@ input::-webkit-inner-spin-button {
     height: calc(100vh - 60px);
     width: calc(100vw);
   }
+
   .second-grid-container-order {
     border-top: 0px;
     border-bottom: 0px;
   }
+
   .second-grid-container-order #table-id {
     font-size: 1rem;
   }
-  
+
   .second-grid-container-order #transaction {
     font-size: 0.75rem;
     padding-right: 8px;
@@ -234,12 +238,12 @@ input::-webkit-inner-spin-button {
     font-size: 0.8rem;
     max-height: 25rem;
   }
-  
+
   .second-grid-container-order #total-text {
     padding-top: 2rem;
     font-size: 0.5rem;
   }
-  
+
   .second-grid-container-order #process-btn {
     margin-top: 0.8rem;
     padding: 20px;
@@ -253,6 +257,7 @@ input::-webkit-inner-spin-button {
   .second-grid-container-order #order-list {
     max-height: 21rem;
   }
+
   .main-grid-container-order {
     max-height: calc(100vh - 60px);
     gap: 25px;
