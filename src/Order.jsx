@@ -20,7 +20,7 @@ function Order() {
       .then((data) => {
         setMenu(data);
       });
-    if (!cookies.get("table")) {
+    if (cookies.get("table")) {
       setCurrentTable(cookies.get("table"));
     }
     setReceiptNumber(cookies.get("receiptNumber"));
@@ -39,6 +39,7 @@ function Order() {
   };
 
   const getOrderList = () => {
+    console.log("getOrderList");
     var currentReceiptNumber;
     if (receiptNumber == '') {
       currentReceiptNumber = cookies.get("receiptNumber");
@@ -97,43 +98,11 @@ function Order() {
             </div>
             <div className="grid-item" id="order-list">
               <p id="list">Order List</p>
-              {/* สำรอง */} <div className="order-list-item">
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-                <p>???</p>
-              </div>
-              {/* {orderList.map((orderList) => (
+              {orderList.map((orderList) => (
                 <div className="order-list-item" id={orderList.order_id} key={orderList.order_id}>
                   <p id={orderList.order_id} key={orderList.order_id} className="orderListItem">T.{orderList.tables_id} | {orderList.menu_id} {orderList.name}</p>
                 </div>
-              ))} */}
+              ))}
             </div>
             <div className="grid-item" id="total">
               <p id="total-text">TOTAL ANYSAX </p>
