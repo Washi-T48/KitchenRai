@@ -51,9 +51,9 @@ function Transaction() {
           <div className="main-grid-container-transaction">
             {receipt.map((receipt) => (
               <div className="grid-item" id={receipt.receipt_id} key={receipt.receipt_id} onClick={handleReceiptClick}>
-                <p id={receipt.receipt_id} key={receipt.receipt_id} className="time">#{receipt.datetime}</p>
-                <p id={receipt.receipt_id} key={receipt.receipt_id} className="receiptID">{receipt.receipt_id}</p>
-                <p id={receipt.receipt_id} key={receipt.receipt_id} className="total">TABLE</p>
+                <p id={receipt.receipt_id} key={receipt.receipt_id} className="time">{receipt.datetime}</p>
+                <p id={receipt.receipt_id} key={receipt.receipt_id} className=""></p>
+                <p id={receipt.receipt_id} key={receipt.receipt_id} className="receiptID">#{receipt.receipt_id}</p>
               </div>
             ))
             }
