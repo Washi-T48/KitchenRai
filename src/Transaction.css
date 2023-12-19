@@ -56,6 +56,10 @@
   margin-bottom: 0;
 }
 
+.time {
+  font-size: 1.75rem;
+}
+
 .second-grid-container-transaction {
   border: 2px solid black;
   border-top: 0px;
@@ -133,6 +137,10 @@
     font-size: 1.5rem;
   }
 
+  .time {
+    font-size: 1.4rem;
+  }
+
   .second-grid-container-transaction {
     border-bottom: 0px;
   }
@@ -151,6 +159,10 @@
     max-height: 75px;
     height: fit-content;
     font-size: 1.15rem;
+  }
+
+  .time {
+    font-size: 1.1rem;
   }
 
   .second-grid-container-transaction #table-id {
@@ -197,6 +209,11 @@
 
   .main-grid-container-transaction .grid-item .tableNo {
     padding-right: 1rem;
+  }
+
+  .time {
+    font-size: 0.5rem;
+    padding-left: 1.5rem;
   }
 
   .second-grid-container-transaction #table-id {
