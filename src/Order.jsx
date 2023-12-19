@@ -39,7 +39,6 @@ function Order() {
   };
 
   const getOrderList = () => {
-    console.log("getOrderList");
     var currentReceiptNumber;
     if (receiptNumber == '') {
       currentReceiptNumber = cookies.get("receiptNumber");

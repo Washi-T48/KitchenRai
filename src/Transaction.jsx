@@ -7,9 +7,9 @@ function Transaction() {
   const cookies = new Cookies();
   const [receipt, setReceipt] = useState([])
   const [currentReceipt, setCurrentReceipt] = useState([]);
-  const [currentReceiptDetails, setCurrentReceiptDetails] = useState([]);
+  const [orderList, setOrderList] = useState([]);
 
-  function getReceipt() {
+  const getReceipt = () => {
     fetch("http://localhost:3000/receipt")
       .then((res) => res.json())
       .then((data) => {
@@ -18,29 +18,32 @@ function Transaction() {
       })
   }
 
-  function getReceiptDetails(id) {
-    fetch("http://localhost:3000/receipt/" + id)
+  const getOrderList = () => {
+    setOrderList([]);
+    var currentReceiptNumber = cookies.get("receiptNumber");
+    console.log(currentReceiptNumber);
+    fetch("http://localhost:3000/receipt/" + currentReceiptNumber)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        setCurrentReceiptDetails(data);
-      })
+        setOrderList(data);
+      });
   }
 
 
-  function handleReceiptClick(e) {
+
+  const handleReceiptClick = (e) => {
     cookies.set("receiptNumber", e.target.id, { path: "/" });
     setCurrentReceipt(e.target.id);
-    getReceiptDetails(e.target.id);
+    getOrderList();
   }
 
-  function handlePay(e) {
+  const handlePay = (e) => {
     e.preventDefault();
     console.log(e.target.id);
     setCurrentReceipt(e.target.id);
   }
 
-  function handleCancel(e) {
+  const handleCancel = (e) => {
     e.preventDefault();
     console.log(e.target.id);
     setCurrentReceipt(e.target.id);
@@ -52,6 +55,9 @@ function Transaction() {
       setCurrentReceipt(cookies.get("receiptNumber"));
     }
     getReceipt();
+    if (cookies.get("receiptNumber")) {
+      getOrderList();
+    }
   }, []);
 
 
@@ -78,13 +84,11 @@ function Transaction() {
               </> : 'RECEIPT'}
             </div>
             <div className="grid-item" id="food">
-              {currentReceiptDetails.map((item) => {
-                return (
-                  <p id={item.receipt_id} key={item.receipt_id} className="foodName">
-                    {item.name} - {item.price}
-                  </p>
-                );
-              })}
+              {orderList.map((orderList) => (
+                <p id={orderList.receipt_id} key={orderList.receipt_id} className="foodName">
+                  {orderList.name} - {orderList.price}
+                </p>
+              ))}
             </div>
             <div className="grid-item" id="time">
               Time
