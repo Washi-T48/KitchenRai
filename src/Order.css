@@ -83,7 +83,7 @@ input::-webkit-inner-spin-button {
   padding-top: 1rem;
   padding-bottom: 0rem;
   font-size: larger;
-  max-height: 19rem;
+  max-height: 24rem;
   display: grid;
   grid-template-columns: auto;
   grid-auto-rows: 1fr;
@@ -157,7 +157,7 @@ input::-webkit-inner-spin-button {
   }
 
   .second-grid-container-order #order-list {
-    max-height: 20rem;
+    max-height: 28rem;
   }
 }
 
@@ -201,7 +201,7 @@ input::-webkit-inner-spin-button {
   .second-grid-container-order #order-list {
     padding-top: 2rem;
     font-size: 1rem;
-    max-height: 12rem;
+    max-height: 19.5rem;
   }
 
   .second-grid-container-order #total-text {
@@ -215,15 +215,6 @@ input::-webkit-inner-spin-button {
     font-size: 1rem;
   }
 }
-
-/* ทำให้ ipad pro ยังไม่สำเร็จ */
-/* @media only screen  
-  and (min-width: 1024px) 
-  and (max-height: 1366px) {
-    .second-grid-container-order #order-list .order-list-item {
-      color:red;
-    }
-} */
 
 @media (max-width: 432px) {
   .main-body-order {
@@ -255,7 +246,7 @@ input::-webkit-inner-spin-button {
   .second-grid-container-order #order-list {
     padding-top: 1.5rem;
     font-size: 0.8rem;
-    max-height: 25rem;
+    max-height: 30rem;
   }
 
   .second-grid-container-order #total-text {
