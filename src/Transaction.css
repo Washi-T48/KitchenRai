@@ -97,6 +97,11 @@
     overflow-y: scroll;
 }
 
+#total {
+  font-size: 1.5rem;
+  justify-self: center;
+}
+
 .second-grid-container-transaction #time {
   padding: 20px;
   text-align: center;
@@ -151,6 +156,12 @@
     font-size: 1.4rem;
   }
 
+  #total {
+    font-size: 1.2rem;
+    padding-top: 1rem;
+    justify-self: center;
+  }
+
   .second-grid-container-transaction {
     border-bottom: 0px;
   }
@@ -177,6 +188,11 @@
 
   .time {
     font-size: 1.1rem;
+  }
+
+  #total {
+    font-size: 1rem;
+    padding-top: 1rem;
   }
 
   .second-grid-container-transaction #table-id {
@@ -230,15 +246,22 @@
     padding-left: 1.5rem;
   }
 
+  #total {
+    font-size: 0.5rem;
+    padding-top: 1.2rem;
+  }
+
   .second-grid-container-transaction #table-id {
     padding-top: 7.5%;
     font-size: 1rem;
+    max-width: 6.4rem;
   }
 
   .second-grid-container-transaction #food {
     font-size: 1rem;
     padding-top: 20%;
     max-height: 12rem;
+    max-width: 6.4rem;
   }
 
   .second-grid-container-transaction #time {
