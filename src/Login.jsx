@@ -31,7 +31,7 @@ function Login() {
             <img className="password_logo" src={password_logo} />
           </div> */}
           <form action="/">
-            <button className="login-btn">Login</button>
+            <button className="login-btn">Enter</button>
           </form>
         </div>
         {/* <div className="login-item-footer">
