@@ -160,6 +160,13 @@
     padding: 30px;
     width: 11.5rem;
   }
+  .main-grid-container-kitchen .grid-item .orderNo {
+      font-size: 1.5rem;
+  }
+  
+  .main-grid-container-kitchen .grid-item .tableNo {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 432px) {
@@ -191,4 +198,17 @@
     padding: 1rem;
     width: 5rem;
   }
+  .main-grid-container-kitchen .grid-item .orderNo {
+    font-size: 1rem;
+    padding-left: 2rem;
+}
+
+.main-grid-container-kitchen .grid-item .foodName {
+  font-size: 1rem;
+}
+
+.main-grid-container-kitchen .grid-item .tableNo {
+  font-size: 1rem;
+  padding-right: 2rem;
+}
 }
