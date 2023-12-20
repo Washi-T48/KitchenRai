@@ -44,7 +44,6 @@ function Transaction() {
     fetch("http://localhost:3000/receipt/" + currentReceipt + "/pay")
       .then((res) => res.json())
       .then(() => {
-        setCurrentReceipt('');
         cookies.set("receiptNumber", (Math.floor(Math.random() * 1000000)), { path: "/" });
         setOrderList([]);
         setCurrentTotal('');
@@ -57,7 +56,6 @@ function Transaction() {
     fetch("http://localhost:3000/receipt/" + currentReceipt + "/cancel")
       .then((res) => res.json())
       .then(() => {
-        setCurrentReceipt('');
         cookies.set("receiptNumber", (Math.floor(Math.random() * 1000000)), { path: "/" });
         setOrderList([]);
         setCurrentTotal('');
