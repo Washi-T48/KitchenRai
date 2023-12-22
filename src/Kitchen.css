@@ -6,7 +6,7 @@
 .main-body-kitchen {
   display: grid;
   grid-template-columns: 70% 30%;
-  height: calc(100vh - 63px);
+  height: calc(100vh - 60px);
   width: calc(100vw);
 }
 
@@ -59,7 +59,9 @@
 .second-grid-container-kitchen {
   border: 2px solid black;
   border-top: 0px;
+  border-bottom: 0px;
   display: grid;
+  height: calc(100vh - 60px);
   grid-template-columns: 1fr;
   grid-template-rows: 15% 25% 10% 25% 25%;
 }
